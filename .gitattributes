@@ -1,0 +1,6 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Change repository language
+*.c linguist-detectable=false
+*.h linguist-detectable=false
