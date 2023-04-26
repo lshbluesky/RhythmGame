@@ -1,73 +1,142 @@
-Ôªø#include<iostream>
-#include<vector>
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+#include <ctype.h>
+#include <windows.h>
+#include <time.h>
+#include <memory.h>
+#include <conio.h>
+#include <iostream>
+#include <string>
+#include <vector>
+#include "fmod.hpp"
+#include "Screen.h"
+#include "Note.h"
+#include "Note.cpp"
 
 using namespace std;
-#define TABLE_X 18
-#define TABLE_Y 20
+using namespace FMOD;
 
+// √π ∏ﬁ¿Œ »≠∏È¿ª ±◊∏Æ±‚ ¿ß«— ≈¨∑°Ω∫ ª˝º∫
 class MainMenu {
 public:
-    MainMenu() {
-        cout << "\n\n\n\n";
-        cout << "\t\t"; cout << "      rrrrrrrrrrr      dddddddddddd\n";
-        cout << "\t\t"; cout << "      rr        rr     dd          dd\n";
-        cout << "\t\t"; cout << "      rr         rr    dd            dd\n";
-        cout << "\t\t"; cout << "      rr         rr    dd             dd\n";
-        cout << "\t\t"; cout << "      rr         rr    dd             dd\n";
-        cout << "\t\t"; cout << "      rr        rr     dd             dd\n";
-        cout << "\t\t"; cout << "      rrrrrrrrrr       dd             dd\n";
-        cout << "\t\t"; cout << "      rr       rr      dd            dd\n";
-        cout << "\t\t"; cout << "      rr         rr    dd          dd\n";
-        cout << "\t\t"; cout << "      rr           rr  ddccccccccdd\n\n";
-        cout << "\t\t"; cout << "Îë†Ïπ´~Îë†Ïπ´ ÏïÑÎ¨¥ÌÇ§ÎÇò ÎàÑÎ•¥Í≥† ÎÑàÏùò Î¶¨Îì¨ÏùÑ Î≥¥Ïó¨Ï§ò!\n\n\n\n";
-        getchar();
-        system("cls");
-    }
+	void DrawMainMenu() {
+		cout << "\n\n\n\n";
+		cout << "\t\t"; cout << "      rrrrrrrrrrr      dddddddddddd\n";
+		cout << "\t\t"; cout << "      rr        rr     dd          dd\n";
+		cout << "\t\t"; cout << "      rr         rr    dd            dd\n";
+		cout << "\t\t"; cout << "      rr         rr    dd             dd\n";
+		cout << "\t\t"; cout << "      rr         rr    dd             dd\n";
+		cout << "\t\t"; cout << "      rr        rr     dd             dd\n";
+		cout << "\t\t"; cout << "      rrrrrrrrrr       dd             dd\n";
+		cout << "\t\t"; cout << "      rr       rr      dd            dd\n";
+		cout << "\t\t"; cout << "      rr         rr    dd          dd\n";
+		cout << "\t\t"; cout << "      rr           rr  ddccccccccdd\n\n";
+		cout << "\t\t"; cout << "µ“ƒ©~µ“ƒ© æ∆π´≈∞≥™ ¥©∏£∞Ì ≥ ¿« ∏ÆµÎ¿ª ∫∏ø©¡‡!\n\n";
+		getchar();
+	}
+
+	void InitMainMenu() {
+		MainMenu::DrawMainMenu();
+	}
 };
 
-class GameTable {
-private:
-    int x;
-    int y;
-    vector<vector<int>> table;
-public:
-    GameTable(int x, int y) {
-        this->x = x;
-        this->y = y;
-        for (int i = 0; i < y; i++) {
-            vector<int> temp;
-            for (int j = 0; j < x; j++) {
-                temp.push_back(0);
-            }
-            table.push_back(temp);
-        }
-
-        for (int i = 0; i < x; i++) {
-            table[0][i] = 1;
-            table[y - 1][i] = 1;
-        }
-        for (int i = 1; i < y - 1; i++) {
-            table[i][0] = 1;
-            table[i][x - 1] = 1;
-        }
-    }
-    void DrawGameTable() {
-        for (int i = 0; i < y; i++) {
-            for (int j = 0; j < x; j++) {
-                if (table[i][j] == 1) cout << "=";
-                else cout << " ";
-            }
-            cout << "\n";
-        }
-    }
-
-};
-
+// ∏ﬁ¿Œ «‘ºˆ
 int main(void) {
-    system("mode con cols=100 lines=40 | title RD");
-    GameTable gt(TABLE_X, TABLE_Y);
-    MainMenu();
-    gt.DrawGameTable();
-    getchar();
-    return 0;
+
+	MainMenu MainControl; // ∏ﬁ¿Œ »≠∏È¿ª ±◊∏Æ¥¬ ∞¥√º ª˝º∫
+	MainControl.InitMainMenu(); // ∏ﬁ¿Œ »≠∏È¿ª ±◊∏Æ¥¬ ∞¥√º∑Œ ∏ﬁ¿Œ »≠∏È √‚∑¬
+
+	SoundSystem(); // FMOD ªÁøÎ ¡ÿ∫Ò
+
+	while (Stage != END) {
+	
+		Play(0); // pSound[0] (=opening.wav)∏¶ Ω««‡
+		
+		ScreenInit(); 
+		KeyIndexInit();
+		init(); // stage∏¶ ready ªÛ≈¬∑Œ ∏∏µÈ∞Ì ≥Î∆ÆµÈ √ ±‚»≠
+		
+		int inputKey=0; //¿‘∑¬ ≈∞
+		while (1) {
+			if (_kbhit()) {
+				inputKey = _getch();
+
+				if (inputKey == ENTER) { // ø£≈Õ ≈∞∏¶ ¿‘∑¬«œ¥¬ ∞ÊøÏ
+					if (Stage == READY) {
+						pChannel[0]->stop();
+						Play(1); // pSound[0] (=Festival_of_Ghost.wav)∏¶ Ω««‡
+					}
+					else if (Stage == PAUSE) { // Ω∫≈◊¿Ã¡ˆ Pause ªÛ≈¬¿œ ∂ß ø£≈Õ∏¶ ¥©∏¶ ∞ÊøÏ
+						PauseEnd = clock();
+						PauseTime += PauseEnd - PauseStart;
+						pChannel[0]->setPaused(false); // «ˆ¿Á pChannel[0]ø° ¿÷¥¬ ≥Î∑°¿« ¿œΩ√ ¡§¡ˆ∏¶ «ÿ¡¶«—¥Ÿ.
+					}
+					else if (Stage == SYNC) { // Ω∫≈◊¿Ã¡ˆ∞° Sync ªÛ≈¬¿œ ∂ß ø£≈Õ∏¶ ¥©∏¶ ∞ÊøÏ
+						NoteInit();
+						pChannel[0]->stop();
+						Play(1);
+						SyncEnd = clock();
+						SyncTime += SyncEnd - SyncStart;
+					}
+					else if (Stage == RESULT) {
+						break;
+					}
+					else
+						break;
+					Stage = RUNNING; // ø£≈Õ ¿‘∑¬ Ω√ runningΩ√¿€ ¿Ωæ« »£√‚
+				}
+
+				if (inputKey == 'p') { 
+					if (Stage == RUNNING) {
+						PauseStart = clock();
+						pChannel[0]->setPaused(true); // «ˆ¿Á pChannel[0]ø° ¿Áª˝¡ﬂ¿Œ ≥Î∑°∏¶ ¿œΩ√ ¡§¡ˆ«—¥Ÿ.
+						Stage = PAUSE;
+					}
+				}
+
+				if (Stage == READY && inputKey == 'c') {
+					SyncStart = clock();
+					Stage = SYNC;
+					SyncMap();
+				}
+
+				if (inputKey == 'a' || inputKey == 's' || inputKey == 'd' || inputKey == 'j' || inputKey == 'k' || inputKey == 'l') { 
+					if (Stage == PAUSE) { // PAUSE ªÛ≈¬¿œ ∞ÊøÏ ≈∞ ¿‘∑¬¿ª π´Ω√
+						continue;
+					}
+
+					string inputKeyStr; // CheckKey()¿« ¿Œ¿⁄∑Œ ¡Ÿ ∫Øºˆ, inputKey∏¶ string¿∏∑Œ ∫Ø»Ø«“ ∫Øºˆ º±æ 
+					inputKeyStr = inputKey; // int inputKey∏¶ string ∫Øºˆ∑Œ ∫Ø»Ø
+					if (isTwoKey(Note[curNoteIndex]) || (curNoteIndex > 0 && isTwoKey(Note[curNoteIndex - 1])) || isTwoKey(Note[curNoteIndex + 1])) { // hit ±∏∞£ ≥Î∆Æ∞° µŒ ∞≥∂Û∏È
+						inputKeyStr = secondkbhit(inputKey, inputKeyStr); // inputKeyøÕ ∫Ò±≥∏¶ ¿ß«ÿ 'inputKey'øÕ string π›»Ø¿ª ¿ß«— 'inputKeyStr'¿ª ¿Œ¿⁄∑Œ ¡‹ 
+					}
+					CheckKey(inputKeyStr);
+				}
+
+				if (Stage == RESULT) {
+					if (inputKey == 'q') {
+						ScreenClear();
+						return 0;
+					}
+				}
+
+				if (Stage == SYNC) {
+					if (inputKey != LEFT && inputKey != RIGHT) {
+						continue;
+					}
+					ControlSync(inputKey);
+				}
+			}
+
+			Update();  // µ•¿Ã≈Õ ∞ªΩ≈
+			Render(inputKey);  // »≠∏È√‚∑¬
+
+		}
+		Release(); // «ÿ¡¶
+		ScreenRelease();
+	}
+	return 0;
 }
