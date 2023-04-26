@@ -31,8 +31,8 @@
 #include <conio.h>
 #include <string>
 #include "fmod.hpp"
-#include "Screen.h"
-#include "Note.h"
+#include "Screen.hpp"
+#include "Note.hpp"
 
 using namespace std;
 using namespace FMOD;

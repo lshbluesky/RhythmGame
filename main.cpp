@@ -12,8 +12,8 @@
 #include <string>
 #include <vector>
 #include "fmod.hpp"
-#include "Screen.h"
-#include "Note.h"
+#include "Screen.hpp"
+#include "Note.hpp"
 #include "Note.cpp"
 
 using namespace std;
