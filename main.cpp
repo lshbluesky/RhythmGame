@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+ï»¿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -19,7 +19,7 @@
 using namespace std;
 using namespace FMOD;
 
-// Ã¹ ¸ŞÀÎ È­¸éÀ» ±×¸®±â À§ÇÑ Å¬·¡½º »ı¼º
+// ì²« ë©”ì¸ í™”ë©´ì„ ê·¸ë¦¬ê¸° ìœ„í•œ í´ë˜ìŠ¤ ìƒì„±
 class MainMenu {
 public:
 	void DrawMainMenu() {
@@ -34,7 +34,7 @@ public:
 		cout << "\t\t"; cout << "      rr       rr      dd            dd\n";
 		cout << "\t\t"; cout << "      rr         rr    dd          dd\n";
 		cout << "\t\t"; cout << "      rr           rr  ddccccccccdd\n\n";
-		cout << "\t\t"; cout << "µÒÄ©~µÒÄ© ¾Æ¹«Å°³ª ´©¸£°í ³ÊÀÇ ¸®µëÀ» º¸¿©Áà!\n\n";
+		cout << "\t\t"; cout << "ë‘ ì¹«~ë‘ ì¹« ì•„ë¬´í‚¤ë‚˜ ëˆ„ë¥´ê³  ë„ˆì˜ ë¦¬ë“¬ì„ ë³´ì—¬ì¤˜!\n\n";
 		getchar();
 	}
 
@@ -43,38 +43,38 @@ public:
 	}
 };
 
-// ¸ŞÀÎ ÇÔ¼ö
+// ë©”ì¸ í•¨ìˆ˜
 int main(void) {
 
-	MainMenu MainControl; // ¸ŞÀÎ È­¸éÀ» ±×¸®´Â °´Ã¼ »ı¼º
-	MainControl.InitMainMenu(); // ¸ŞÀÎ È­¸éÀ» ±×¸®´Â °´Ã¼·Î ¸ŞÀÎ È­¸é Ãâ·Â
+	MainMenu MainControl; // ë©”ì¸ í™”ë©´ì„ ê·¸ë¦¬ëŠ” ê°ì²´ ìƒì„±
+	MainControl.InitMainMenu(); // ë©”ì¸ í™”ë©´ì„ ê·¸ë¦¬ëŠ” ê°ì²´ë¡œ ë©”ì¸ í™”ë©´ ì¶œë ¥
 
-	SoundSystem(); // FMOD »ç¿ë ÁØºñ
+	SoundSystem(); // FMOD ì‚¬ìš© ì¤€ë¹„
 
 	while (Stage != END) {
 	
-		Play(0); // pSound[0] (=opening.wav)¸¦ ½ÇÇà
+		Play(0); // pSound[0] (=Main_BGM.wav)ë¥¼ ì‹¤í–‰
 		
 		ScreenInit(); 
 		KeyIndexInit();
-		init(); // stage¸¦ ready »óÅÂ·Î ¸¸µé°í ³ëÆ®µé ÃÊ±âÈ­
+		init(); // stageë¥¼ ready ìƒíƒœë¡œ ë§Œë“¤ê³  ë…¸íŠ¸ë“¤ ì´ˆê¸°í™”
 		
-		int inputKey=0; //ÀÔ·Â Å°
+		int inputKey=0; //ì…ë ¥ í‚¤
 		while (1) {
 			if (_kbhit()) {
 				inputKey = _getch();
 
-				if (inputKey == ENTER) { // ¿£ÅÍ Å°¸¦ ÀÔ·ÂÇÏ´Â °æ¿ì
+				if (inputKey == ENTER) { // ì—”í„° í‚¤ë¥¼ ì…ë ¥í•˜ëŠ” ê²½ìš°
 					if (Stage == READY) {
 						pChannel[0]->stop();
-						Play(1); // pSound[0] (=Festival_of_Ghost.wav)¸¦ ½ÇÇà
+						Play(1); // pSound[0] (=Game_BGM.wav)ë¥¼ ì‹¤í–‰
 					}
-					else if (Stage == PAUSE) { // ½ºÅ×ÀÌÁö Pause »óÅÂÀÏ ¶§ ¿£ÅÍ¸¦ ´©¸¦ °æ¿ì
+					else if (Stage == PAUSE) { // ìŠ¤í…Œì´ì§€ Pause ìƒíƒœì¼ ë•Œ ì—”í„°ë¥¼ ëˆ„ë¥¼ ê²½ìš°
 						PauseEnd = clock();
 						PauseTime += PauseEnd - PauseStart;
-						pChannel[0]->setPaused(false); // ÇöÀç pChannel[0]¿¡ ÀÖ´Â ³ë·¡ÀÇ ÀÏ½Ã Á¤Áö¸¦ ÇØÁ¦ÇÑ´Ù.
+						pChannel[0]->setPaused(false); // í˜„ì¬ pChannel[0]ì— ìˆëŠ” ë…¸ë˜ì˜ ì¼ì‹œ ì •ì§€ë¥¼ í•´ì œí•œë‹¤.
 					}
-					else if (Stage == SYNC) { // ½ºÅ×ÀÌÁö°¡ Sync »óÅÂÀÏ ¶§ ¿£ÅÍ¸¦ ´©¸¦ °æ¿ì
+					else if (Stage == SYNC) { // ìŠ¤í…Œì´ì§€ê°€ Sync ìƒíƒœì¼ ë•Œ ì—”í„°ë¥¼ ëˆ„ë¥¼ ê²½ìš°
 						NoteInit();
 						pChannel[0]->stop();
 						Play(1);
@@ -86,13 +86,13 @@ int main(void) {
 					}
 					else
 						break;
-					Stage = RUNNING; // ¿£ÅÍ ÀÔ·Â ½Ã running½ÃÀÛ À½¾Ç È£Ãâ
+					Stage = RUNNING; // ì—”í„° ì…ë ¥ ì‹œ runningì‹œì‘ ìŒì•… í˜¸ì¶œ
 				}
 
 				if (inputKey == 'p') { 
 					if (Stage == RUNNING) {
 						PauseStart = clock();
-						pChannel[0]->setPaused(true); // ÇöÀç pChannel[0]¿¡ Àç»ıÁßÀÎ ³ë·¡¸¦ ÀÏ½Ã Á¤ÁöÇÑ´Ù.
+						pChannel[0]->setPaused(true); // í˜„ì¬ pChannel[0]ì— ì¬ìƒì¤‘ì¸ ë…¸ë˜ë¥¼ ì¼ì‹œ ì •ì§€í•œë‹¤.
 						Stage = PAUSE;
 					}
 				}
@@ -104,14 +104,14 @@ int main(void) {
 				}
 
 				if (inputKey == 'a' || inputKey == 's' || inputKey == 'd' || inputKey == 'j' || inputKey == 'k' || inputKey == 'l') { 
-					if (Stage == PAUSE) { // PAUSE »óÅÂÀÏ °æ¿ì Å° ÀÔ·ÂÀ» ¹«½Ã
+					if (Stage == PAUSE) { // PAUSE ìƒíƒœì¼ ê²½ìš° í‚¤ ì…ë ¥ì„ ë¬´ì‹œ
 						continue;
 					}
 
-					string inputKeyStr; // CheckKey()ÀÇ ÀÎÀÚ·Î ÁÙ º¯¼ö, inputKey¸¦ stringÀ¸·Î º¯È¯ÇÒ º¯¼ö ¼±¾ğ 
-					inputKeyStr = inputKey; // int inputKey¸¦ string º¯¼ö·Î º¯È¯
-					if (isTwoKey(Note[curNoteIndex]) || (curNoteIndex > 0 && isTwoKey(Note[curNoteIndex - 1])) || isTwoKey(Note[curNoteIndex + 1])) { // hit ±¸°£ ³ëÆ®°¡ µÎ °³¶ó¸é
-						inputKeyStr = secondkbhit(inputKey, inputKeyStr); // inputKey¿Í ºñ±³¸¦ À§ÇØ 'inputKey'¿Í string ¹İÈ¯À» À§ÇÑ 'inputKeyStr'À» ÀÎÀÚ·Î ÁÜ 
+					string inputKeyStr; // CheckKey()ì˜ ì¸ìë¡œ ì¤„ ë³€ìˆ˜, inputKeyë¥¼ stringìœ¼ë¡œ ë³€í™˜í•  ë³€ìˆ˜ ì„ ì–¸ 
+					inputKeyStr = inputKey; // int inputKeyë¥¼ string ë³€ìˆ˜ë¡œ ë³€í™˜
+					if (isTwoKey(Note[curNoteIndex]) || (curNoteIndex > 0 && isTwoKey(Note[curNoteIndex - 1])) || isTwoKey(Note[curNoteIndex + 1])) { // hit êµ¬ê°„ ë…¸íŠ¸ê°€ ë‘ ê°œë¼ë©´
+						inputKeyStr = secondkbhit(inputKey, inputKeyStr); // inputKeyì™€ ë¹„êµë¥¼ ìœ„í•´ 'inputKey'ì™€ string ë°˜í™˜ì„ ìœ„í•œ 'inputKeyStr'ì„ ì¸ìë¡œ ì¤Œ 
 					}
 					CheckKey(inputKeyStr);
 				}
@@ -131,11 +131,11 @@ int main(void) {
 				}
 			}
 
-			Update();  // µ¥ÀÌÅÍ °»½Å
-			Render(inputKey);  // È­¸éÃâ·Â
+			Update();  // ë°ì´í„° ê°±ì‹ 
+			Render(inputKey);  // í™”ë©´ì¶œë ¥
 
 		}
-		Release(); // ÇØÁ¦
+		Release(); // í•´ì œ
 		ScreenRelease();
 	}
 	return 0;
