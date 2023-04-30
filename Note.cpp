@@ -108,6 +108,7 @@ void ReadyMap1() {
 // 결과화면 출력
 void ResultMap()
 {
+	pChannel[0]->setPaused(true); // 게임이 끝나면 현재 pChannel[0]에 재생중인 노래를 일시 정지한다.
 	SetColor(9); ScreenPrint(15, 10, "GAME END !"); SetColor(15);
 	UserScore = "[User] "; // 사용자 점수를 나타냄
 	UserScore += to_string(nScore);
