@@ -42,7 +42,7 @@ void SoundSystem() {
 	System_Create(&pSystem);
 	pSystem->init(4, FMOD_INIT_NORMAL, NULL);
 	pSystem->createSound("Main_BGM.wav", FMOD_LOOP_NORMAL | FMOD_HARDWARE, NULL, &pSound[0]); // ¿ÀÇÁ´×À½¾Ç
-	pSystem->createSound("Game_BGM.wav", FMOD_DEFAULT, NULL, &pSound[1]); // °ÔÀÓÀ½¾Ç
+	pSystem->createSound("Game_BGM.mp3", FMOD_DEFAULT, NULL, &pSound[1]); // °ÔÀÓÀ½¾Ç
 }
 void Play(int Sound_num) {
 	pSystem->playSound(FMOD_CHANNEL_FREE, pSound[Sound_num], 0, pChannel);
