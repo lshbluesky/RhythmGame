@@ -93,7 +93,7 @@ void ScoreMap() {
 }
 // 게임 실행 전 준비화면
 void ReadyMap() {
-	ScreenPrint(14, 10, "노래 이름 입력");
+	ScreenPrint(16, 10, "IVE - I AM");
 	ScreenPrint(2, 26, "□□□■■■□□□  ■■■□□□■■■");
 	ScreenPrint(12, 20, "Press c to Syncmap");
 	ScreenPrint(2, 27, "  A     S     D       J     K      L");
