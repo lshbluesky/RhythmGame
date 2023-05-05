@@ -412,7 +412,7 @@ void Render(int nkey) {
 			}
 			ShowNote();
 		}
-		if (RunningTime > 52000)
+		if (RunningTime > 69000)
 		{
 			Stage = RESULT;
 		}
