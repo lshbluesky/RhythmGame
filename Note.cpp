@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 	void SoundSystem() : function for allocating and initializing Fmod systems.
 	void Play() : function for playing allocated songs.
 	void Map() : function for showing game map.
@@ -37,80 +37,80 @@
 using namespace std;
 using namespace FMOD;
 
-//»ç¿îµå ÇÔ¼ö
+//ì‚¬ìš´ë“œ í•¨ìˆ˜
 void SoundSystem() {
 	System_Create(&pSystem);
 	pSystem->init(4, FMOD_INIT_NORMAL, NULL);
-	pSystem->createSound("Main_BGM.wav", FMOD_LOOP_NORMAL | FMOD_HARDWARE, NULL, &pSound[0]); // ¿ÀÇÁ´×À½¾Ç
-	pSystem->createSound("Game_BGM.mp3", FMOD_DEFAULT, NULL, &pSound[1]); // °ÔÀÓÀ½¾Ç
+	pSystem->createSound("Main_BGM.wav", FMOD_LOOP_NORMAL | FMOD_HARDWARE, NULL, &pSound[0]); // ì˜¤í”„ë‹ìŒì•…
+	pSystem->createSound("Game_BGM.mp3", FMOD_DEFAULT, NULL, &pSound[1]); // ê²Œì„ìŒì•…
 }
 void Play(int Sound_num) {
 	pSystem->playSound(FMOD_CHANNEL_FREE, pSound[Sound_num], 0, pChannel);
 }
 
-// ¸Ê ÇÔ¼ö
-// ½ºÅ×ÀÌÁö ±âº» Æ²
+// ë§µ í•¨ìˆ˜
+// ìŠ¤í…Œì´ì§€ ê¸°ë³¸ í‹€
 void Map(void) {
 	int nNum = 0;
-	ScreenPrint(0, 0, "¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à");
+	ScreenPrint(0, 0, "â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡");
 	for (int i = 1; i < 29; i++) {
-		ScreenPrint(0, i, "¡à\t\t\t\t\t¡à");
+		ScreenPrint(0, i, "â–¡\t\t\t\t\tâ–¡");
 	}
-	ScreenPrint(0, 29, "¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à");
+	ScreenPrint(0, 29, "â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡");
 	ScreenPrint(2, 26, "______________________________________");
 }
-// ¿ìÃø Á¡¼ö Ãâ·ÂÆ²
+// ìš°ì¸¡ ì ìˆ˜ ì¶œë ¥í‹€
 void ScoreMap() {
-	// °æ°ú½Ã°£
-	char nTime[20];//°æ°ú ½Ã°£À» ³ªÅ¸³½´Ù
-	sprintf(nTime, "½Ã°£ : %d.%dÃÊ", RunningTime / 1000, RunningTime % 1000);
+	// ê²½ê³¼ì‹œê°„
+	char nTime[20];//ê²½ê³¼ ì‹œê°„ì„ ë‚˜íƒ€ë‚¸ë‹¤
+	sprintf(nTime, "ì‹œê°„ : %d.%dì´ˆ", RunningTime / 1000, RunningTime % 1000);
 	ScreenPrint(44, 2, nTime);
-	// Á¡¼ö ¸ñ·Ï
-	if (strcmp(strScore, "¡ÚPerfect¡Ú") == 0) {
+	// ì ìˆ˜ ëª©ë¡
+	if (strcmp(strScore, "â˜…Perfectâ˜…") == 0) {
 		SetColor(14);
 	}
-	else if (strcmp(strScore, "¡ÚGreat¡Ú") == 0) {
+	else if (strcmp(strScore, "â˜…Greatâ˜…") == 0) {
 		SetColor(9);
 	}
-	ScreenPrint(44, 10, strScore);//Great,PerfectÆÇº°
+	ScreenPrint(44, 10, strScore);//Great,PerfectíŒë³„
 	SetColor(15);
-	ScreenPrint(44, 22, "Great : 300Á¡");
-	ScreenPrint(44, 23, "Perfect : 500Á¡");
+	ScreenPrint(44, 22, "Great : 300ì ");
+	ScreenPrint(44, 23, "Perfect : 500ì ");
 	SetColor(12);
 	ScreenPrint(44, 6, "Press \'p\' to Pause");
 	SetColor(15);
-	// Á¡¼ö
-	char UserScore[20];//»ç¿ëÀÚ Á¡¼ö¸¦ ³ªÅ¸³¿
-	sprintf(UserScore, "Á¡¼ö : %d Á¡", nScore);
+	// ì ìˆ˜
+	char UserScore[20];//ì‚¬ìš©ì ì ìˆ˜ë¥¼ ë‚˜íƒ€ëƒ„
+	sprintf(UserScore, "ì ìˆ˜ : %d ì ", nScore);
 	ScreenPrint(44, 4, UserScore);
-	ScreenPrint(44, 27, "<<< È÷Æ® ±¸°£(G)");
-	ScreenPrint(44, 28, "<<< È÷Æ® ±¸°£(P)");
-	ScreenPrint(44, 29, "<<< È÷Æ® ±¸°£(G)");
-	//ÄŞº¸
-	char strCombo[20];//ÄŞº¸¸¦ ³ªÅ¸³½´Ù
-	sprintf(strCombo, "%d ÄŞº¸", nCombo);
+	ScreenPrint(44, 27, "<<< íˆíŠ¸ êµ¬ê°„(G)");
+	ScreenPrint(44, 28, "<<< íˆíŠ¸ êµ¬ê°„(P)");
+	ScreenPrint(44, 29, "<<< íˆíŠ¸ êµ¬ê°„(G)");
+	//ì½¤ë³´
+	char strCombo[20];//ì½¤ë³´ë¥¼ ë‚˜íƒ€ë‚¸ë‹¤
+	sprintf(strCombo, "%d ì½¤ë³´", nCombo);
 	ScreenPrint(44, 13, strCombo);
 }
-// °ÔÀÓ ½ÇÇà Àü ÁØºñÈ­¸é
+// ê²Œì„ ì‹¤í–‰ ì „ ì¤€ë¹„í™”ë©´
 void ReadyMap() {
 	ScreenPrint(16, 10, "IVE - I AM");
-	ScreenPrint(2, 26, "¡à¡à¡à¡á¡á¡á¡à¡à¡à  ¡á¡á¡á¡à¡à¡à¡á¡á¡á");
+	ScreenPrint(2, 26, "â–¡â–¡â–¡â– â– â– â–¡â–¡â–¡  â– â– â– â–¡â–¡â–¡â– â– â– ");
 	ScreenPrint(12, 20, "Press c to Syncmap");
 	ScreenPrint(2, 27, "  A     S     D       J     K      L");
-	// °ÔÀÓ Á¶ÀÛ Å° ¼³¸í 
+	// ê²Œì„ ì¡°ì‘ í‚¤ ì„¤ëª… 
 }
-// RenderÇÔ¼ö¿¡¼­ ±ôºıÀÌ¸é¼­ Ãâ·Â
+// Renderí•¨ìˆ˜ì—ì„œ ê¹œë¹¡ì´ë©´ì„œ ì¶œë ¥
 void ReadyMap1() {
 	SetColor(10);
 	ScreenPrint(11, 15, "Press Enter to Start");
 	SetColor(15);
 }
-// °á°úÈ­¸é Ãâ·Â
+// ê²°ê³¼í™”ë©´ ì¶œë ¥
 void ResultMap()
 {
-	pChannel[0]->setPaused(true); // °ÔÀÓÀÌ ³¡³ª¸é ÇöÀç pChannel[0]¿¡ Àç»ıÁßÀÎ ³ë·¡¸¦ ÀÏ½Ã Á¤ÁöÇÑ´Ù.
+	pChannel[0]->setPaused(true); // ê²Œì„ì´ ëë‚˜ë©´ í˜„ì¬ pChannel[0]ì— ì¬ìƒì¤‘ì¸ ë…¸ë˜ë¥¼ ì¼ì‹œ ì •ì§€í•œë‹¤.
 	SetColor(9); ScreenPrint(15, 10, "GAME END !"); SetColor(15);
-	UserScore = "[User] "; // »ç¿ëÀÚ Á¡¼ö¸¦ ³ªÅ¸³¿
+	UserScore = "[User] "; // ì‚¬ìš©ì ì ìˆ˜ë¥¼ ë‚˜íƒ€ëƒ„
 	UserScore += to_string(nScore);
 
 	if (nScore >= bestScore) {
@@ -128,15 +128,15 @@ void ResultMap()
 	ScreenPrint(13, 20, "Press q to Exit");
 	SetColor(15);
 }
-// ½ÌÅ©È­¸é Ãâ·Â
+// ì‹±í¬í™”ë©´ ì¶œë ¥
 void SyncMap()
 {
-	ScreenPrint(4, 15, "Press ¡ç ¡æ to tune the Sync! : "+to_string(Syncnum));
+	ScreenPrint(4, 15, "Press â† â†’ to tune the Sync! : "+to_string(Syncnum));
 	ScreenPrint(10, 20, "Press Enter to Start ");
 }
 
-// ÃÊ±âÈ­ ÇÔ¼ö
-//ÃÊ±â ½Ã°£°ú ³ëÆ®µé ±×¸®°í ½ºÄÚ¾î ÃÊ±âÈ­
+// ì´ˆê¸°í™” í•¨ìˆ˜
+//ì´ˆê¸° ì‹œê°„ê³¼ ë…¸íŠ¸ë“¤ ê·¸ë¦¬ê³  ìŠ¤ì½”ì–´ ì´ˆê¸°í™”
 void init() {
 	curNoteIndex = 0; 
 	nScore = 0; //
@@ -150,102 +150,165 @@ void init() {
 	SyncTime = 0;
 	PauseTime = 0;
 }
-//Å°¿Í ³ëÆ® string¸¦ KeyNote±¸Á¶Ã¼¿¡ ÃÊ±âÈ­ ½ÃÄÑÁÖ´Â ÇÔ¼ö
+//í‚¤ì™€ ë…¸íŠ¸ stringë¥¼ KeyNoteêµ¬ì¡°ì²´ì— ì´ˆê¸°í™” ì‹œì¼œì£¼ëŠ” í•¨ìˆ˜
 void KeyIndexInit() {
-	//index´Â ÀÔ·Â¹ŞÀº Å°ÀÇ Á¾·ù (note.h¿¡ »ó¼ö·Î ¼±¾ğ)
+	//indexëŠ” ì…ë ¥ë°›ì€ í‚¤ì˜ ì¢…ë¥˜ (note.hì— ìƒìˆ˜ë¡œ ì„ ì–¸)
 	KeyIndex[none].inputKey = "none";
 	KeyIndex[none].nKey = "                                      ";
 	KeyIndex[a].inputKey = "a";
-	KeyIndex[a].nKey = "¡á¡á¡á";
+	KeyIndex[a].nKey = "â– â– â– ";
 	KeyIndex[s].inputKey = "s";
-	KeyIndex[s].nKey = "      ¡á¡á¡á";
+	KeyIndex[s].nKey = "      â– â– â– ";
 	KeyIndex[d].inputKey = "d";
-	KeyIndex[d].nKey = "            ¡á¡á¡á";
+	KeyIndex[d].nKey = "            â– â– â– ";
 	KeyIndex[j].inputKey = "j";
-	KeyIndex[j].nKey = "                    ¡á¡á¡á";
+	KeyIndex[j].nKey = "                    â– â– â– ";
 	KeyIndex[k].inputKey = "k";
-	KeyIndex[k].nKey = "                          ¡á¡á¡á";
+	KeyIndex[k].nKey = "                          â– â– â– ";
 	KeyIndex[l].inputKey = "l";
-	KeyIndex[l].nKey = "                                ¡á¡á¡á";
+	KeyIndex[l].nKey = "                                â– â– â– ";
 	KeyIndex[aj].inputKey = "aj";
-	KeyIndex[aj].nKey = "¡á¡á¡á              ¡á¡á¡á";
+	KeyIndex[aj].nKey = "â– â– â–               â– â– â– ";
 	KeyIndex[ks].inputKey = "ks";
-	KeyIndex[ks].nKey = "      ¡á¡á¡á              ¡á¡á¡á";
+	KeyIndex[ks].nKey = "      â– â– â–               â– â– â– ";
 	KeyIndex[dl].inputKey = "dl";
-	KeyIndex[dl].nKey = "            ¡á¡á¡á              ¡á¡á¡á";
+	KeyIndex[dl].nKey = "            â– â– â–               â– â– â– ";
+	KeyIndex[as].inputKey = "as";
+	KeyIndex[as].nKey = "â– â– â– â– â– â– ";
+	KeyIndex[ad].inputKey = "ad";
+	KeyIndex[ad].nKey = "â– â– â–       â– â– â– ";
+	KeyIndex[ak].inputKey = "ak";
+	KeyIndex[ak].nKey = "â– â– â–                     â– â– â– ";
+	KeyIndex[al].inputKey = "al";
+	KeyIndex[al].nKey = "â– â– â–                           â– â– â– ";
+	KeyIndex[sd].inputKey = "sd";
+	KeyIndex[sd].nKey = "      â– â– â– â– â– â– ";
+	KeyIndex[sj].inputKey = "sj";
+	KeyIndex[sj].nKey = "      â– â– â–         â– â– â– ";
+	KeyIndex[sl].inputKey = "sl";
+	KeyIndex[sl].nKey = "      â– â– â–                     â– â– â– ";
+	KeyIndex[dj].inputKey = "dj";
+	KeyIndex[dj].nKey = "            â– â– â–   â– â– â– ";
+	KeyIndex[dk].inputKey = "dk";
+	KeyIndex[dk].nKey = "            â– â– â–         â– â– â– ";
+	KeyIndex[jk].inputKey = "jk";
+	KeyIndex[jk].nKey = "                    â– â– â– â– â– â– ";
+	KeyIndex[jl].inputKey = "jl";
+	KeyIndex[jl].nKey = "                    â– â– â–       â– â– â– ";
+	KeyIndex[kl].inputKey = "kl";
+	KeyIndex[kl].nKey = "                          â– â– â– â– â– â– ";
 }
-// ¾Çº¸
+// ì•…ë³´
 void NoteInit(void) {
 	for (int i = 0; i < ALLNOTE; i++) {
 		Note[i] = " ";
 	}
+	// Part1 : 4ì´ˆ ~ 17ì´ˆ
+	Note[37 + Control.nMagic] = nKeyD;  // ë‹¤ë¥¸
+	Note[41 + Control.nMagic] = nKeyS;
+	Note[45 + Control.nMagic] = nKeyJ;  // ë¬¸ì„
+	Note[47 + Control.nMagic] = nKeyK;
+	Note[51 + Control.nMagic] = nKeyAL; // ì—´ì–´
+	Note[56 + Control.nMagic] = nKeyDJ;
 
-	// Part2 : 17ÃÊ ~ 36ÃÊ
+	Note[75 + Control.nMagic] = nKeyA;  // ë”°ë¼
+	Note[78 + Control.nMagic] = nKeyS;
+	Note[82 + Control.nMagic] = nKeyD;  // ê°ˆ
+	Note[83 + Control.nMagic] = nKeyL;
+	Note[86 + Control.nMagic] = nKeyK;  // í•„ìš˜
+	Note[89 + Control.nMagic] = nKeyJ;  // ì—†ì–´
+	Note[93 + Control.nMagic] = nKeyDJ;
 	
-	Note[236 + Control.nMagic] = nKeyA;  // ¹à°Ô (17ÃÊ)
+	Note[114 + Control.nMagic] = nKeyA; // ë„Œ ë„ˆì˜ ê¸¸ë¡œ
+	Note[118 + Control.nMagic] = nKeyD;
+	Note[122 + Control.nMagic] = nKeyS;
+	Note[132 + Control.nMagic] = nKeyK; // ë‚œ ë‚˜ì˜ ê¸¸ë¡œ
+	Note[135 + Control.nMagic] = nKeyJ;
+	Note[138 + Control.nMagic] = nKeyL;
+
+	Note[150 + Control.nMagic] = nKeyDJ; // ìŒ
+	Note[154 + Control.nMagic] = nKeySK;
+	Note[160 + Control.nMagic] = nKeyAL;
+
+	Note[184 + Control.nMagic] = nKeyA;  // í•˜ë£¨í•˜ë£¨ë§ˆë‹¤
+	Note[186 + Control.nMagic] = nKeyL;
+	Note[188 + Control.nMagic] = nKeyD;
+	Note[190 + Control.nMagic] = nKeyJ;
+	Note[192 + Control.nMagic] = nKeySK;
+	Note[194 + Control.nMagic] = nKeySK;
+
+	Note[212 + Control.nMagic] = nKeyKL; // ìƒ‰ì´ ë‹¬ë¼ì§„ ëŠë‚Œ
+	Note[216 + Control.nMagic] = nKeyAS;
+	Note[220 + Control.nMagic] = nKeyJ;
+	Note[224 + Control.nMagic] = nKeyD;
+	Note[228 + Control.nMagic] = nKeyS;
+	Note[234 + Control.nMagic] = nKeyK;
+
+	// Part2 : 17ì´ˆ ~ 36ì´ˆ
+	Note[236 + Control.nMagic] = nKeyA;  // ë°ê²Œ (17ì´ˆ)
 	Note[238 + Control.nMagic] = nKeyS;
-	Note[241 + Control.nMagic] = nKeyK;  // ºûÀÌ
+	Note[241 + Control.nMagic] = nKeyK;  // ë¹›ì´
 	Note[243 + Control.nMagic] = nKeyJ;
-	Note[246 + Control.nMagic] = nKeyAJ; // ³ª´Â
+	Note[246 + Control.nMagic] = nKeyAJ; // ë‚˜ëŠ”
 	Note[248 + Control.nMagic] = nKeyAJ;
 	
-	Note[259 + Control.nMagic] = nKeySK; // ±æ
-	Note[261 + Control.nMagic] = nKeySK; // À»
-	Note[263 + Control.nMagic] = nKeySK; // Ã£
-	Note[265 + Control.nMagic] = nKeySK; // ¾Æ
+	Note[259 + Control.nMagic] = nKeySK; // ê¸¸
+	Note[261 + Control.nMagic] = nKeySK; // ì„
+	Note[263 + Control.nMagic] = nKeySK; // ì°¾
+	Note[265 + Control.nMagic] = nKeySK; // ì•„
 
-	Note[274 + Control.nMagic] = nKeyK;  // I'm on my
+	Note[274 + Control.nMagic] = nKeyK;  // I'm
 	Note[279 + Control.nMagic] = nKeyL;  // on
 	Note[284 + Control.nMagic] = nKeyAJ; // my
-	
-	Note[291 + Control.nMagic] = nKeyAJ; // way~ (21ÃÊ)
+
+	Note[291 + Control.nMagic] = nKeyAJ; // way~ (21ì´ˆ)
 	Note[301 + Control.nMagic] = nKeyA;
 	Note[303 + Control.nMagic] = nKeyS;
-	Note[305 + Control.nMagic] = nKeySK; // way~ (22ÃÊ)
+	Note[305 + Control.nMagic] = nKeySK; // way~ (22ì´ˆ)
 	Note[315 + Control.nMagic] = nKeyS;
 	Note[317 + Control.nMagic] = nKeyD;
-	Note[319 + Control.nMagic] = nKeyDL; // way~ (23ÃÊ)
+	Note[319 + Control.nMagic] = nKeyDL; // way~ (23ì´ˆ)
 
-	Note[337 + Control.nMagic] = nKeyK;  // MR È­À½ (24ÃÊ)
+	Note[337 + Control.nMagic] = nKeyK;  // MR í™”ìŒ (24ì´ˆ)
 	Note[338 + Control.nMagic] = nKeyJ;
 	Note[339 + Control.nMagic] = nKeyK;
 	Note[340 + Control.nMagic] = nKeyL;
 
-	Note[354 + Control.nMagic] = nKeySK; // ³Í (25ÃÊ)
-	Note[358 + Control.nMagic] = nKeyS;  // ±×
-	Note[362 + Control.nMagic] = nKeyS;  // ³É
-	Note[367 + Control.nMagic] = nKeyL;  // ¹Ï
-	Note[371 + Control.nMagic] = nKeyK;  // À¸
-	Note[375 + Control.nMagic] = nKeyK;  // ¸é
-	Note[379 + Control.nMagic] = nKeyAJ; // µÅ
-	
+	Note[354 + Control.nMagic] = nKeySK; // ë„Œ (25ì´ˆ)
+	Note[358 + Control.nMagic] = nKeyS;  // ê·¸
+	Note[362 + Control.nMagic] = nKeyS;  // ëƒ¥
+	Note[367 + Control.nMagic] = nKeyL;  // ë¯¿
+	Note[371 + Control.nMagic] = nKeyK;  // ìœ¼
+	Note[375 + Control.nMagic] = nKeyK;  // ë©´
+	Note[379 + Control.nMagic] = nKeyAJ; // ë¼
+
 	Note[400 + Control.nMagic] = nKeyK;  // I'm
 	Note[405 + Control.nMagic] = nKeyL;  // on
 	Note[410 + Control.nMagic] = nKeyAJ; // my
 
-	Note[416 + Control.nMagic] = nKeyAJ; // way~ (29ÃÊ)
+	Note[416 + Control.nMagic] = nKeyAJ; // way~ (29ì´ˆ)
 	Note[428 + Control.nMagic] = nKeyA;
 	Note[430 + Control.nMagic] = nKeyS;
-	Note[432 + Control.nMagic] = nKeySK; // way~ (30ÃÊ)
+	Note[432 + Control.nMagic] = nKeySK; // way~ (30ì´ˆ)
 	Note[441 + Control.nMagic] = nKeyS;
 	Note[443 + Control.nMagic] = nKeyD;
-	Note[445 + Control.nMagic] = nKeyDL; // way~ (31ÃÊ)
+	Note[445 + Control.nMagic] = nKeyDL; // way~ (31ì´ˆ)
 
-	Note[460 + Control.nMagic] = nKeyK;  // MR È­À½ (32ÃÊ)
+	Note[460 + Control.nMagic] = nKeyK;  // MR í™”ìŒ (32ì´ˆ)
 	Note[461 + Control.nMagic] = nKeyL;
 	Note[462 + Control.nMagic] = nKeyK;
 	Note[463 + Control.nMagic] = nKeyJ;
 
-	Note[479 + Control.nMagic] = nKeySK; // º¸ (33ÃÊ)
-	Note[483 + Control.nMagic] = nKeyS;  // ÀÌ
-	Note[488 + Control.nMagic] = nKeyS;  // ´Â
-	Note[492 + Control.nMagic] = nKeyDL; // ±×
-	Note[496 + Control.nMagic] = nKeyA;  // ´ë
-	Note[500 + Control.nMagic] = nKeyS;  // ·Î
-	Note[504 + Control.nMagic] = nKeySK; // ¾ß
+	Note[479 + Control.nMagic] = nKeySK; // ë³´ (33ì´ˆ)
+	Note[483 + Control.nMagic] = nKeyS;  // ì´
+	Note[488 + Control.nMagic] = nKeyS;  // ëŠ”
+	Note[492 + Control.nMagic] = nKeyDL; // ê·¸
+	Note[496 + Control.nMagic] = nKeyA;  // ëŒ€
+	Note[500 + Control.nMagic] = nKeyS;  // ë¡œ
+	Note[504 + Control.nMagic] = nKeySK; // ì•¼
 
 }
-// ±âº» ±â´É ÇÔ¼ö
+// ê¸°ë³¸ ê¸°ëŠ¥ í•¨ìˆ˜
 void Update() {
 	clock_t Curtime = clock();
 	switch (Stage) {
@@ -253,7 +316,7 @@ void Update() {
 		Oldtime = Curtime;
 		break;
 	case RUNNING:
-		// °ÔÀÓ ½ÃÀÛ ÈÄ ½Ã°£ ÃøÁ¤º¯¼ö
+		// ê²Œì„ ì‹œì‘ í›„ ì‹œê°„ ì¸¡ì •ë³€ìˆ˜
 		RunningTime = Curtime - Oldtime - PauseTime - SyncTime;
 		break;
 	case PAUSE:
@@ -261,9 +324,9 @@ void Update() {
 	}
 }
 void Render(int nkey) {
-	clock_t Curtime = clock(); // Áö±İ±îÁö Èå¸¥ ½Ã°£
+	clock_t Curtime = clock(); // ì§€ê¸ˆê¹Œì§€ íë¥¸ ì‹œê°„
 	ScreenClear();
-	//Ãâ·ÂÄÚµå
+	//ì¶œë ¥ì½”ë“œ
 
 	Map();
 	ScoreMap();
@@ -272,22 +335,22 @@ void Render(int nkey) {
 		SyncMap();
 	}
 	switch (Stage) {
-	case READY://´ë±â»óÅÂ
+	case READY://ëŒ€ê¸°ìƒíƒœ
 		Oldtime1 = Curtime;
 		ReadyMap();
 		if (Curtime % 1000 > 500) {
 			ReadyMap1();
-		}//0.5ÃÊ ´ÜÀ§·Î È­¸éÀ» Ãâ·Â
+		}//0.5ì´ˆ ë‹¨ìœ„ë¡œ í™”ë©´ì„ ì¶œë ¥
 		break;
 	case PAUSE:
 		return;
 	case RUNNING:
-		if (RunningTime > 3100) //3ÃÊ ÀÌÈÄºÎÅÍ
+		if (RunningTime > 3100) //3ì´ˆ ì´í›„ë¶€í„°
 		{
 			if (Curtime - Control.OldTime > Control.MovTime)
 			{
 				Control.OldTime = Curtime;
-				curNoteIndex++;//³ëÆ®°¡ ÀúÀåµÈ ¹è¿­ÀÇ ÀÎµ¦½º¸¦ Áõ°¡
+				curNoteIndex++;//ë…¸íŠ¸ê°€ ì €ì¥ëœ ë°°ì—´ì˜ ì¸ë±ìŠ¤ë¥¼ ì¦ê°€
 			}
 			ShowNote();
 		}
@@ -307,18 +370,18 @@ void Release() {
 
 }
 
-// Å° ÇÔ¼ö
-// µÎ ¹øÂ° Å° ÀÔ·ÂÀ» ¹Ş´Â ÇÔ¼ö
+// í‚¤ í•¨ìˆ˜
+// ë‘ ë²ˆì§¸ í‚¤ ì…ë ¥ì„ ë°›ëŠ” í•¨ìˆ˜
 string secondkbhit(int inputKey, string inputKeyStr) {
-	int inputKey2; // µÎ ¹øÂ°·Î ÀÔ·ÂµÈ Å°¸¦ ¹Ş±â À§ÇÑ º¯¼ö
+	int inputKey2; // ë‘ ë²ˆì§¸ë¡œ ì…ë ¥ëœ í‚¤ë¥¼ ë°›ê¸° ìœ„í•œ ë³€ìˆ˜
 	for (int i = 0; i < 1000; i++) {
 		if (_kbhit()) {
 			inputKey2 = _getch();
 			if (inputKey2 == 'a' || inputKey2 == 's' || inputKey2 == 'd' || inputKey2 == 'j' || inputKey2 == 'k' || inputKey2 == 'l') {
-				if (inputKey == inputKey2) { //ÀÌÀü Å°°¡ ±æ°Ô ´­·ÈÀ» °æ¿ì ÀÎ½ÄÇÏ´Â °ÍÀ» ¹æÁö
+				if (inputKey == inputKey2) { //ì´ì „ í‚¤ê°€ ê¸¸ê²Œ ëˆŒë ¸ì„ ê²½ìš° ì¸ì‹í•˜ëŠ” ê²ƒì„ ë°©ì§€
 					continue;
 				}
-				else if (inputKey < inputKey2) { //¾ËÆÄºª ¼ø¼­°¡ ºü¸¥ °ÍÀ» inputKeyStr¿¡ ¸ÕÀú ¹èÄ¡
+				else if (inputKey < inputKey2) { //ì•ŒíŒŒë²³ ìˆœì„œê°€ ë¹ ë¥¸ ê²ƒì„ inputKeyStrì— ë¨¼ì € ë°°ì¹˜
 					inputKeyStr += inputKey2;
 				}
 				else {
@@ -331,7 +394,7 @@ string secondkbhit(int inputKey, string inputKeyStr) {
 	}
 	return inputKeyStr;
 }
-// Å°¿¡ ÇØ´çÇÏ´Â ³ëÆ® ¹®ÀÚ¿­À» ¹İÈ¯ÇØÁÖ´Â ÇÔ¼ö
+// í‚¤ì— í•´ë‹¹í•˜ëŠ” ë…¸íŠ¸ ë¬¸ìì—´ì„ ë°˜í™˜í•´ì£¼ëŠ” í•¨ìˆ˜
 string GetKeyType(string inputKeyStr) {
 	string nKeyStr = "";
 	for (int i = 0; i < NumOfKey; i++) {
@@ -342,11 +405,11 @@ string GetKeyType(string inputKeyStr) {
 	}
 	return nKeyStr;
 }
-// ÇöÀç ³ëÆ®°¡ µÎ °³ÀÇ ³ëÆ®ÀÎÁö È®ÀÎÇØÁÖ´Â ÇÔ¼ö
+// í˜„ì¬ ë…¸íŠ¸ê°€ ë‘ ê°œì˜ ë…¸íŠ¸ì¸ì§€ í™•ì¸í•´ì£¼ëŠ” í•¨ìˆ˜
 int isTwoKey(string nKeyStr) {
 	for (int i = 0; i < NumOfKey; i++) {
-		if (nKeyStr == KeyIndex[i].nKey) { //note°¡ KeyIndex ±¸Á¶Ã¼ÀÇ nKey string°ú °°´Ù¸é
-			if (i >= aj) { //»ó¼ö ajº¸´Ù Å©´Ù¸é µÎ °³ÀÇ ³ëÆ®¸¦ °¡Áö°í ÀÖÀ¸¹Ç·Î 1 ¸®ÅÏ
+		if (nKeyStr == KeyIndex[i].nKey) { //noteê°€ KeyIndex êµ¬ì¡°ì²´ì˜ nKey stringê³¼ ê°™ë‹¤ë©´
+			if (i >= aj) { //ìƒìˆ˜ ajë³´ë‹¤ í¬ë‹¤ë©´ ë‘ ê°œì˜ ë…¸íŠ¸ë¥¼ ê°€ì§€ê³  ìˆìœ¼ë¯€ë¡œ 1 ë¦¬í„´
 				return 1;
 			}
 			else {
@@ -356,20 +419,20 @@ int isTwoKey(string nKeyStr) {
 	}
 	return 0;
 }
-// Ãæµ¹Ã³¸®
+// ì¶©ëŒì²˜ë¦¬
 void CheckKey(string inputKeyStr) {
-	string nKeyStr; // ÀÔ·ÂÇÑ Å°ÀÇ Á¾·ù
+	string nKeyStr; // ì…ë ¥í•œ í‚¤ì˜ ì¢…ë¥˜
 	nKeyStr = GetKeyType(inputKeyStr);
-	if (Note[curNoteIndex] == nKeyStr) { // PerfectÆÇº° ±¸°£ÀÇ Note¿Í ÀÔ·ÂÇÑ KeyType°¡ ÀÏÄ¡ÇÏ´Â °æ¿ì
+	if (Note[curNoteIndex] == nKeyStr) { // PerfectíŒë³„ êµ¬ê°„ì˜ Noteì™€ ì…ë ¥í•œ KeyTypeê°€ ì¼ì¹˜í•˜ëŠ” ê²½ìš°
 		nScore += 500;
 		nCombo++;
 		if (nCombo >= 10) {
 			nScore += nCombo * 50;
 		}
 		Note[curNoteIndex] = HitNote(nKeyStr);
-		sprintf(strScore, "%s", "¡ÚPerfect¡Ú");
+		sprintf(strScore, "%s", "â˜…Perfectâ˜…");
 	}
-	else if ((curNoteIndex > 0 && (Note[curNoteIndex - 1] == nKeyStr)) || (Note[curNoteIndex + 1] == nKeyStr)) { // Great ÆÇº° ±¸°£ÀÇ Note¿Í ÀÔ·ÂÇÑ KeyType°¡ ÀÏÄ¡ÇÏ´Â °æ¿ì
+	else if ((curNoteIndex > 0 && (Note[curNoteIndex - 1] == nKeyStr)) || (Note[curNoteIndex + 1] == nKeyStr)) { // Great íŒë³„ êµ¬ê°„ì˜ Noteì™€ ì…ë ¥í•œ KeyTypeê°€ ì¼ì¹˜í•˜ëŠ” ê²½ìš°
 		nScore += 300;
 		nCombo++;
 		if (nCombo >= 10) {
@@ -377,25 +440,25 @@ void CheckKey(string inputKeyStr) {
 		}
 		Note[curNoteIndex + 1] = HitNote(nKeyStr);
 		Note[curNoteIndex - 1] = HitNote(nKeyStr);
-		sprintf(strScore, "%s", "¡ÚGreat¡Ú");
+		sprintf(strScore, "%s", "â˜…Greatâ˜…");
 	}
 	else {
 		nCombo = 0;
 	}
 }
 
-// ³ëÆ® ÇÔ¼ö
-// 2Â÷¿ø ¹è¿­À» ¾Æ·¡·Î ¶³¾îÁö°Ô²û ÇØÁÖ´Â ÇÔ¼ö
+// ë…¸íŠ¸ í•¨ìˆ˜
+// 2ì°¨ì› ë°°ì—´ì„ ì•„ë˜ë¡œ ë–¨ì–´ì§€ê²Œë” í•´ì£¼ëŠ” í•¨ìˆ˜
 void ShowNote() {
 	for (int i = 0; i < 27; i++) {
-		if (28 - i >= 27) { // È÷Æ® ¶óÀÎ ¹ØÀ¸·Î ³»·Á°£ ºí·Ï ÀüºÎ´Ù ³ë¶õ»öÀ¸·Î º¯°æ.
+		if (28 - i >= 27) { // íˆíŠ¸ ë¼ì¸ ë°‘ìœ¼ë¡œ ë‚´ë ¤ê°„ ë¸”ë¡ ì „ë¶€ë‹¤ ë…¸ë€ìƒ‰ìœ¼ë¡œ ë³€ê²½.
 			SetColor(14);
 		}
 		else SetColor(15);
 		ScreenPrint(2, 28 - i, Note[curNoteIndex + i]);
 	}
 }
-// È÷Æ®¸¦ ¼º°øÇÑ ³ëÆ®¸¦ È÷Æ®µÈ ³ëÆ® stringÀ¸·Î ¹İÈ¯
+// íˆíŠ¸ë¥¼ ì„±ê³µí•œ ë…¸íŠ¸ë¥¼ íˆíŠ¸ëœ ë…¸íŠ¸ stringìœ¼ë¡œ ë°˜í™˜
 string HitNote(string inputKey) {
 	for (int i = 0; i < inputKey.length(); i++) {
 		if (inputKey[i] != ' ') {
@@ -405,9 +468,9 @@ string HitNote(string inputKey) {
 	return inputKey;
 }
 
-// ½ÌÅ© ÇÔ¼ö
+// ì‹±í¬ í•¨ìˆ˜
 void ControlSync(int inputKey) {
-	if (inputKey == LEFT) { // ½ÌÅ© ÁÙÀÌ±â
+	if (inputKey == LEFT) { // ì‹±í¬ ì¤„ì´ê¸°
 		if (Syncnum <= -30) {
 			Syncnum = Syncnum;
 		}
@@ -415,7 +478,7 @@ void ControlSync(int inputKey) {
 			Syncnum--;
 		}
 	}
-	else  { // ½ÌÅ© ³ôÀÌ±â
+	else  { // ì‹±í¬ ë†’ì´ê¸°
 		if (Syncnum >= 30) {
 			Syncnum = Syncnum;
 		}
