@@ -1,4 +1,4 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -34,7 +34,7 @@ public:
 		cout << "\t\t"; cout << "      rr       rr      dd            dd\n";
 		cout << "\t\t"; cout << "      rr         rr    dd          dd\n";
 		cout << "\t\t"; cout << "      rr           rr  ddccccccccdd\n\n";
-		cout << "\t\t"; cout << "둠칫~둠칫 아무키나 누르고 너의 리듬을 보여줘!\n\n";
+		cout << "\t\t"; cout << "둠칫~둠칫 ENTER키를 누르고 너의 리듬을 보여줘!\n\n";
 		getchar();
 	}
 
@@ -85,15 +85,26 @@ int main(void) {
 						break;
 					}
 					else
+					{
+						PauseStart = clock();
+						pChannel[0]->setPaused(true); // 현재 pChannel[0]에 재생중인 노래를 일시 정지한다.
+						Stage = PAUSE;
 						break;
+					}
 					Stage = RUNNING; // 엔터 입력 시 running시작 음악 호출
 				}
 
-				if (inputKey == 'p') { 
+				if (inputKey == 'p') {
 					if (Stage == RUNNING) {
 						PauseStart = clock();
 						pChannel[0]->setPaused(true); // 현재 pChannel[0]에 재생중인 노래를 일시 정지한다.
 						Stage = PAUSE;
+					}
+					else if (Stage == PAUSE && inputKey == 'p') { // 스테이지 Pause 상태일 때 p를 누를 경우
+						PauseEnd = clock();
+						PauseTime += PauseEnd - PauseStart;
+						pChannel[0]->setPaused(false); // 현재 pChannel[0]에 있는 노래의 일시 정지를 해제한다.
+						Stage = RUNNING;
 					}
 				}
 
