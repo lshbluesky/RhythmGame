@@ -204,45 +204,45 @@ void NoteInit(void) {
 		Note[i] = " ";
 	}
 	// Part1 : 4초 ~ 17초
-	Note[55 + Control.nMagic] = nKeyD;  // 다른
-	Note[59 + Control.nMagic] = nKeyS;
-	Note[63 + Control.nMagic] = nKeyJ;  // 문을
-	Note[65 + Control.nMagic] = nKeyK;
-	Note[69 + Control.nMagic] = nKeyAL; // 열어
-	Note[74 + Control.nMagic] = nKeyDJ;
+	Note[37 + Control.nMagic] = nKeyD;  // 다른
+	Note[41 + Control.nMagic] = nKeyS;
+	Note[45 + Control.nMagic] = nKeyJ;  // 문을
+	Note[47 + Control.nMagic] = nKeyK;
+	Note[51 + Control.nMagic] = nKeyAL; // 열어
+	Note[56 + Control.nMagic] = nKeyDJ;
 
-	Note[93 + Control.nMagic] = nKeyA;  // 따라
-	Note[96 + Control.nMagic] = nKeyS;
-	Note[100 + Control.nMagic] = nKeyD; // 갈
-	Note[101 + Control.nMagic] = nKeyL;
-	Note[104 + Control.nMagic] = nKeyK; // 필욘
-	Note[107 + Control.nMagic] = nKeyJ; // 없어
-	Note[111 + Control.nMagic] = nKeyDJ;
+	Note[75 + Control.nMagic] = nKeyA;  // 따라
+	Note[78 + Control.nMagic] = nKeyS;
+	Note[82 + Control.nMagic] = nKeyD;  // 갈
+	Note[83 + Control.nMagic] = nKeyL;
+	Note[86 + Control.nMagic] = nKeyK;  // 필욘
+	Note[89 + Control.nMagic] = nKeyJ;  // 없어
+	Note[93 + Control.nMagic] = nKeyDJ;
 	
-	Note[132 + Control.nMagic] = nKeyA; //넌 너의 길로
-	Note[136 + Control.nMagic] = nKeyD;
-	Note[140 + Control.nMagic] = nKeyS;
-	Note[150 + Control.nMagic] = nKeyK; // 난 나의 길로
-	Note[153 + Control.nMagic] = nKeyJ;
-	Note[156 + Control.nMagic] = nKeyL;
+	Note[114 + Control.nMagic] = nKeyA; // 넌 너의 길로
+	Note[118 + Control.nMagic] = nKeyD;
+	Note[122 + Control.nMagic] = nKeyS;
+	Note[132 + Control.nMagic] = nKeyK; // 난 나의 길로
+	Note[135 + Control.nMagic] = nKeyJ;
+	Note[138 + Control.nMagic] = nKeyL;
 
-	Note[168 + Control.nMagic] = nKeyDJ; // 음
-	Note[172 + Control.nMagic] = nKeySK;
-	Note[178 + Control.nMagic] = nKeyAL;
+	Note[150 + Control.nMagic] = nKeyDJ; // 음
+	Note[154 + Control.nMagic] = nKeySK;
+	Note[160 + Control.nMagic] = nKeyAL;
 
-	Note[202 + Control.nMagic] = nKeyA;  // 하루하루마다
-	Note[204 + Control.nMagic] = nKeyL;
-	Note[206 + Control.nMagic] = nKeyD;
-	Note[208 + Control.nMagic] = nKeyJ;
-	Note[210 + Control.nMagic] = nKeySK;
-	Note[212 + Control.nMagic] = nKeySK;
+	Note[184 + Control.nMagic] = nKeyA;  // 하루하루마다
+	Note[186 + Control.nMagic] = nKeyL;
+	Note[188 + Control.nMagic] = nKeyD;
+	Note[190 + Control.nMagic] = nKeyJ;
+	Note[192 + Control.nMagic] = nKeySK;
+	Note[194 + Control.nMagic] = nKeySK;
 
-	Note[230 + Control.nMagic] = nKeyKL; // 색이 달라진 느낌
-	Note[234 + Control.nMagic] = nKeyAS;
-	Note[238 + Control.nMagic] = nKeyJ;
-	Note[242 + Control.nMagic] = nKeyD;
-	Note[246 + Control.nMagic] = nKeyS;
-	Note[252 + Control.nMagic] = nKeyK;
+	Note[212 + Control.nMagic] = nKeyKL; // 색이 달라진 느낌
+	Note[216 + Control.nMagic] = nKeyAS;
+	Note[220 + Control.nMagic] = nKeyJ;
+	Note[224 + Control.nMagic] = nKeyD;
+	Note[228 + Control.nMagic] = nKeyS;
+	Note[234 + Control.nMagic] = nKeyK;
 
 	// Part2 : 17초 ~ 36초
 	Note[236 + Control.nMagic] = nKeyA;  // 밝게 (17초)
@@ -251,7 +251,7 @@ void NoteInit(void) {
 	Note[243 + Control.nMagic] = nKeyJ;
 	Note[246 + Control.nMagic] = nKeyAJ; // 나는
 	Note[248 + Control.nMagic] = nKeyAJ;
-
+	
 	Note[259 + Control.nMagic] = nKeySK; // 길
 	Note[261 + Control.nMagic] = nKeySK; // 을
 	Note[263 + Control.nMagic] = nKeySK; // 찾
