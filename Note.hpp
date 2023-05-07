@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include<time.h>
 #include<string>
 #include"fmod.hpp"
@@ -8,7 +8,7 @@ using namespace FMOD;
 
 //**********************************************상수 선언**********************************************
 // 키의 종류 개수
-#define NumOfKey 10
+#define NumOfKey 22
 //노트 개수
 #define ALLNOTE 1300
 // 입력 키 종류를 상수로 선언
@@ -22,6 +22,19 @@ using namespace FMOD;
 #define aj 7
 #define ks 8
 #define dl 9
+#define as 10
+#define ad 11
+#define ak 12
+#define al 13
+#define sd 14
+#define sj 15
+#define sl 16
+#define dj 17
+#define dk 18
+#define jk 19
+#define jl 20
+#define kl 21
+
 // 방향키 상수로 선언
 #define LEFT 75
 #define RIGHT 77
@@ -69,16 +82,28 @@ clock_t Oldtime1 = 0;
 clock_t Oldtime = 0;
 
 // 노트 종류를 string으로 선언
-string nKeyNone = "                                      ";
-string nKeyL = "                                ■■■";
-string nKeyK = "                          ■■■";
-string nKeyJ = "                    ■■■";
-string nKeyD = "            ■■■";
-string nKeyS = "      ■■■";
-string nKeyA = "■■■";
-string nKeyAJ = "■■■              ■■■";
-string nKeySK = "      ■■■              ■■■";
-string nKeyDL = "            ■■■              ■■■";
+string nKeyNone = "                                    ";
+string nKeyL = "                                 ■■■";
+string nKeyK = "                           ■■■";
+string nKeyJ = "                      ■■■";
+string nKeyD = "             ■■■";
+string nKeyS = "       ■■■";
+string nKeyA = " ■■■";
+string nKeyAJ = " ■■■                 ■■■";
+string nKeySK = "       ■■■                 ■■■";
+string nKeyDL = "             ■■■                 ■■■";
+string nKeyAS = " ■■■■■■";
+string nKeyAD = " ■■■      ■■■";
+string nKeyAK = " ■■■                       ■■■";
+string nKeyAL = " ■■■                             ■■■";
+string nKeySD = "       ■■■■■■";
+string nKeySJ = "       ■■■           ■■■";
+string nKeySL = "       ■■■                 ■■■";
+string nKeyDJ = "             ■■■     ■■■";
+string nKeyDK = "             ■■■           ■■■";
+string nKeyJK = "                     ■■■■■■";
+string nKeyJL = "                     ■■■      ■■■";
+string nKeyKL = "                           ■■■■■■";
 
 // 노트 배열
 string Note[ALLNOTE];
