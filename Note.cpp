@@ -204,14 +204,14 @@ void NoteInit(void) {
 		Note[i] = " ";
 	}
 	// Part1 : 4초 ~ 17초
-	Note[55 + Control.nMagic] = nKeyD; // 다른
+	Note[55 + Control.nMagic] = nKeyD;  // 다른
 	Note[59 + Control.nMagic] = nKeyS;
-	Note[63 + Control.nMagic] = nKeyJ; // 문을
+	Note[63 + Control.nMagic] = nKeyJ;  // 문을
 	Note[65 + Control.nMagic] = nKeyK;
 	Note[69 + Control.nMagic] = nKeyAL; // 열어
 	Note[74 + Control.nMagic] = nKeyDJ;
 
-	Note[93 + Control.nMagic] = nKeyA; // 따라
+	Note[93 + Control.nMagic] = nKeyA;  // 따라
 	Note[96 + Control.nMagic] = nKeyS;
 	Note[100 + Control.nMagic] = nKeyD; // 갈
 	Note[101 + Control.nMagic] = nKeyL;
@@ -230,8 +230,8 @@ void NoteInit(void) {
 	Note[172 + Control.nMagic] = nKeySK;
 	Note[178 + Control.nMagic] = nKeyAL;
 
-	Note[202 + Control.nMagic] = nKeyA; // 하루하루마다
-	Note[204 + Control.nMagic] = nKeyL; 
+	Note[202 + Control.nMagic] = nKeyA;  // 하루하루마다
+	Note[204 + Control.nMagic] = nKeyL;
 	Note[206 + Control.nMagic] = nKeyD;
 	Note[208 + Control.nMagic] = nKeyJ;
 	Note[210 + Control.nMagic] = nKeySK;
@@ -244,10 +244,7 @@ void NoteInit(void) {
 	Note[246 + Control.nMagic] = nKeyS;
 	Note[252 + Control.nMagic] = nKeyK;
 
-
-	
 	// Part2 : 17초 ~ 36초
-
 	Note[236 + Control.nMagic] = nKeyA;  // 밝게 (17초)
 	Note[238 + Control.nMagic] = nKeyS;
 	Note[241 + Control.nMagic] = nKeyK;  // 빛이
@@ -260,7 +257,7 @@ void NoteInit(void) {
 	Note[263 + Control.nMagic] = nKeySK; // 찾
 	Note[265 + Control.nMagic] = nKeySK; // 아
 
-	Note[274 + Control.nMagic] = nKeyK;  // I'm on my
+	Note[274 + Control.nMagic] = nKeyK;  // I'm
 	Note[279 + Control.nMagic] = nKeyL;  // on
 	Note[284 + Control.nMagic] = nKeyAJ; // my
 
