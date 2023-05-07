@@ -1,4 +1,4 @@
-/*
+﻿/*
 	void SoundSystem() : function for allocating and initializing Fmod systems.
 	void Play() : function for playing allocated songs.
 	void Map() : function for showing game map.
@@ -52,12 +52,12 @@ void Play(int Sound_num) {
 // 스테이지 기본 틀
 void Map(void) {
 	int nNum = 0;
-	ScreenPrint(0, 0, "□ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □");
+	ScreenPrint(0, 0, "□□□□□□□□□□□□□□□□□□□□□");
 	for (int i = 1; i < 29; i++) {
 		ScreenPrint(0, i, "□\t\t\t\t\t□");
 	}
-	ScreenPrint(0, 29, "□ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □");
-	ScreenPrint(2, 26, "_____________________________________");
+	ScreenPrint(0, 29, "□□□□□□□□□□□□□□□□□□□□□");
+	ScreenPrint(2, 26, "______________________________________");
 }
 // 우측 점수 출력틀
 void ScoreMap() {
@@ -94,9 +94,9 @@ void ScoreMap() {
 // 게임 실행 전 준비화면
 void ReadyMap() {
 	ScreenPrint(16, 10, "IVE - I AM");
-	ScreenPrint(2, 26, "□ □ □ ■ ■ ■ □ □ □   ■ ■ ■ □ □ □ ■ ■ ■");
+	ScreenPrint(2, 26, "□□□■■■□□□  ■■■□□□■■■");
 	ScreenPrint(12, 20, "Press c to Syncmap");
-	ScreenPrint(2, 27, "  A     S     D       J     K     L");
+	ScreenPrint(2, 27, "  A     S     D       J     K      L");
 	// 게임 조작 키 설명 
 }
 // Render함수에서 깜빡이면서 출력
@@ -154,49 +154,49 @@ void init() {
 void KeyIndexInit() {
 	//index는 입력받은 키의 종류 (note.h에 상수로 선언)
 	KeyIndex[none].inputKey = "none";
-	KeyIndex[none].nKey = "                                         ";
+	KeyIndex[none].nKey = "                                      ";
 	KeyIndex[a].inputKey = "a";
-	KeyIndex[a].nKey = " ■■■";
+	KeyIndex[a].nKey = "■■■";
 	KeyIndex[s].inputKey = "s";
-	KeyIndex[s].nKey = "       ■■■";
+	KeyIndex[s].nKey = "      ■■■";
 	KeyIndex[d].inputKey = "d";
-	KeyIndex[d].nKey = "             ■■■";
+	KeyIndex[d].nKey = "            ■■■";
 	KeyIndex[j].inputKey = "j";
-	KeyIndex[j].nKey = "                     ■■■";
+	KeyIndex[j].nKey = "                    ■■■";
 	KeyIndex[k].inputKey = "k";
-	KeyIndex[k].nKey = "                           ■■■";
+	KeyIndex[k].nKey = "                          ■■■";
 	KeyIndex[l].inputKey = "l";
-	KeyIndex[l].nKey = "                                 ■■■";
+	KeyIndex[l].nKey = "                                ■■■";
 	KeyIndex[aj].inputKey = "aj";
-	KeyIndex[aj].nKey = " ■■■                 ■■■";
+	KeyIndex[aj].nKey = "■■■              ■■■";
 	KeyIndex[ks].inputKey = "ks";
-	KeyIndex[ks].nKey = "       ■■■                 ■■■";
+	KeyIndex[ks].nKey = "      ■■■              ■■■";
 	KeyIndex[dl].inputKey = "dl";
-	KeyIndex[dl].nKey = "             ■■■                 ■■■";
+	KeyIndex[dl].nKey = "            ■■■              ■■■";
 	KeyIndex[as].inputKey = "as";
-	KeyIndex[as].nKey = " ■■■■■■";
+	KeyIndex[as].nKey = "■■■■■■";
 	KeyIndex[ad].inputKey = "ad";
-	KeyIndex[ad].nKey = " ■■■      ■■■";
+	KeyIndex[ad].nKey = "■■■      ■■■";
 	KeyIndex[ak].inputKey = "ak";
-	KeyIndex[ak].nKey = " ■■■                       ■■■";
+	KeyIndex[ak].nKey = "■■■                    ■■■";
 	KeyIndex[al].inputKey = "al";
-	KeyIndex[al].nKey = " ■■■                             ■■■";
+	KeyIndex[al].nKey = "■■■                          ■■■";
 	KeyIndex[sd].inputKey = "sd";
-	KeyIndex[sd].nKey = "       ■■■■■■";
+	KeyIndex[sd].nKey = "      ■■■■■■";
 	KeyIndex[sj].inputKey = "sj";
-	KeyIndex[sj].nKey = "       ■■■           ■■■";
+	KeyIndex[sj].nKey = "      ■■■        ■■■";
 	KeyIndex[sl].inputKey = "sl";
-	KeyIndex[sl].nKey = "       ■■■                 ■■■";
+	KeyIndex[sl].nKey = "      ■■■                    ■■■";
 	KeyIndex[dj].inputKey = "dj";
-	KeyIndex[dj].nKey = "             ■■■     ■■■";
+	KeyIndex[dj].nKey = "            ■■■  ■■■";
 	KeyIndex[dk].inputKey = "dk";
-	KeyIndex[dk].nKey = "             ■■■           ■■■";
+	KeyIndex[dk].nKey = "            ■■■        ■■■";
 	KeyIndex[jk].inputKey = "jk";
-	KeyIndex[jk].nKey = "                     ■■■■■■";
+	KeyIndex[jk].nKey = "                    ■■■■■■";
 	KeyIndex[jl].inputKey = "jl";
-	KeyIndex[jl].nKey = "                     ■■■      ■■■";
+	KeyIndex[jl].nKey = "                    ■■■      ■■■";
 	KeyIndex[kl].inputKey = "kl";
-	KeyIndex[kl].nKey = "                           ■■■■■■";
+	KeyIndex[kl].nKey = "                          ■■■■■■";
 }
 // 악보
 void NoteInit(void) {
@@ -458,14 +458,14 @@ void ShowNote() {
 			SetColor(14);
 		}
 		else SetColor(15);
-		ScreenPrint(1, 28 - i, Note[curNoteIndex + i]);
+		ScreenPrint(2, 28 - i, Note[curNoteIndex + i]);
 	}
 }
 // 히트를 성공한 노트를 히트된 노트 string으로 반환
 string HitNote(string inputKey) {
 	for (int i = 0; i < inputKey.length(); i++) {
 		if (inputKey[i] != ' ') {
-			inputKey[i] = 'o';
+			inputKey[i] = 'oo';
 		}
 	}
 	return inputKey;
