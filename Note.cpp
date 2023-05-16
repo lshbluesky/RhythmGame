@@ -204,108 +204,194 @@ void NoteInit(void) {
 		Note[i] = " ";
 	}
 	// Part1 : 4초 ~ 17초
-	Note[37 + Control.nMagic] = nKeyD;  // 다른
-	Note[41 + Control.nMagic] = nKeyS;
-	Note[45 + Control.nMagic] = nKeyJ;  // 문을
-	Note[47 + Control.nMagic] = nKeyK;
-	Note[51 + Control.nMagic] = nKeyAL; // 열어
-	Note[56 + Control.nMagic] = nKeyDJ;
+	Note[37 + 15 + Control.nMagic] = nKeyD;  // 다른
+	Note[41 + 15 + Control.nMagic] = nKeyS;
+	Note[45 + 15 + Control.nMagic] = nKeyJ;  // 문을
+	Note[47 + 15 + Control.nMagic] = nKeyK;
+	Note[51 + 15 + Control.nMagic] = nKeyAL; // 열어
+	Note[56 + 15 + Control.nMagic] = nKeyDJ;
 
-	Note[75 + Control.nMagic] = nKeyA;  // 따라
-	Note[78 + Control.nMagic] = nKeyS;
-	Note[82 + Control.nMagic] = nKeyD;  // 갈
-	Note[83 + Control.nMagic] = nKeyL;
-	Note[86 + Control.nMagic] = nKeyK;  // 필욘
-	Note[89 + Control.nMagic] = nKeyJ;  // 없어
-	Note[93 + Control.nMagic] = nKeyDJ;
+	Note[75 + 15 + Control.nMagic] = nKeyA;  // 따라
+	Note[78 + 15 + Control.nMagic] = nKeyS;
+	Note[82 + 15 + Control.nMagic] = nKeyD;  // 갈
+	Note[83 + 15 + Control.nMagic] = nKeyL;
+	Note[86 + 15 + Control.nMagic] = nKeyK;  // 필욘
+	Note[89 + 15 + Control.nMagic] = nKeyJ;  // 없어
+	Note[93 + 15 + Control.nMagic] = nKeyDJ;
 	
-	Note[114 + Control.nMagic] = nKeyA; // 넌 너의 길로
-	Note[118 + Control.nMagic] = nKeyD;
-	Note[122 + Control.nMagic] = nKeyS;
-	Note[132 + Control.nMagic] = nKeyK; // 난 나의 길로
-	Note[135 + Control.nMagic] = nKeyJ;
-	Note[138 + Control.nMagic] = nKeyL;
+	Note[114 + 15 + Control.nMagic] = nKeyA; // 넌 너의 길로
+	Note[118 + 15 + Control.nMagic] = nKeyD;
+	Note[122 + 15 + Control.nMagic] = nKeyS;
+	Note[132 + 15 + Control.nMagic] = nKeyK; // 난 나의 길로
+	Note[135 + 15 + Control.nMagic] = nKeyJ;
+	Note[138 + 15 + Control.nMagic] = nKeyL;
 
-	Note[150 + Control.nMagic] = nKeyDJ; // 음
-	Note[154 + Control.nMagic] = nKeySK;
-	Note[160 + Control.nMagic] = nKeyAL;
+	Note[150 + 15 + Control.nMagic] = nKeyDJ; // 음
+	Note[154 + 15 + Control.nMagic] = nKeySK;
+	Note[160 + 15 + Control.nMagic] = nKeyAL;
 
-	Note[184 + Control.nMagic] = nKeyA;  // 하루하루마다
-	Note[186 + Control.nMagic] = nKeyL;
-	Note[188 + Control.nMagic] = nKeyD;
-	Note[190 + Control.nMagic] = nKeyJ;
-	Note[192 + Control.nMagic] = nKeySK;
-	Note[194 + Control.nMagic] = nKeySK;
+	Note[184 + 12 + Control.nMagic] = nKeyA;  // 하루하루마다
+	Note[186 + 12 + Control.nMagic] = nKeyL;
+	Note[188 + 12 + Control.nMagic] = nKeyD;
+	Note[190 + 12 + Control.nMagic] = nKeyJ;
+	Note[192 + 12 + Control.nMagic] = nKeySK;
+	Note[194 + 12 + Control.nMagic] = nKeySK;
 
-	Note[212 + Control.nMagic] = nKeyKL; // 색이 달라진 느낌
-	Note[216 + Control.nMagic] = nKeyAS;
-	Note[220 + Control.nMagic] = nKeyJ;
-	Note[224 + Control.nMagic] = nKeyD;
-	Note[228 + Control.nMagic] = nKeyS;
-	Note[234 + Control.nMagic] = nKeyK;
+	Note[212 + 12 + Control.nMagic] = nKeyKL; // 색이 달라진 느낌
+	Note[216 + 12 + Control.nMagic] = nKeyAS;
+	Note[220 + 12 + Control.nMagic] = nKeyJ;
+	Note[224 + 12 + Control.nMagic] = nKeyD;
+	Note[228 + 12 + Control.nMagic] = nKeyS;
+	Note[234 + 12 + Control.nMagic] = nKeyK;
 
 	// Part2 : 17초 ~ 36초
-	Note[236 + Control.nMagic] = nKeyA;  // 밝게 (17초)
-	Note[238 + Control.nMagic] = nKeyS;
-	Note[241 + Control.nMagic] = nKeyK;  // 빛이
-	Note[243 + Control.nMagic] = nKeyJ;
-	Note[246 + Control.nMagic] = nKeyAJ; // 나는
-	Note[248 + Control.nMagic] = nKeyAJ;
+	Note[236 + 25 + Control.nMagic] = nKeyA;  // 밝게 (17초)
+	Note[238 + 25 + Control.nMagic] = nKeyS;
+	Note[241 + 25 + Control.nMagic] = nKeyK;  // 빛이
+	Note[243 + 25 + Control.nMagic] = nKeyJ;
+	Note[246 + 25 + Control.nMagic] = nKeyAJ; // 나는
+	Note[248 + 25 + Control.nMagic] = nKeyAJ;
 	
-	Note[259 + Control.nMagic] = nKeySK; // 길
-	Note[261 + Control.nMagic] = nKeySK; // 을
-	Note[263 + Control.nMagic] = nKeySK; // 찾
-	Note[265 + Control.nMagic] = nKeySK; // 아
+	Note[259 + 25 + Control.nMagic] = nKeySK; // 길
+	Note[261 + 25 + Control.nMagic] = nKeySK; // 을
+	Note[263 + 25 + Control.nMagic] = nKeySK; // 찾
+	Note[265 + 25 + Control.nMagic] = nKeySK; // 아
 
-	Note[274 + Control.nMagic] = nKeyK;  // I'm
-	Note[279 + Control.nMagic] = nKeyL;  // on
-	Note[284 + Control.nMagic] = nKeyAJ; // my
+	Note[274 + 25 + Control.nMagic] = nKeyK;  // I'm
+	Note[279 + 25 + Control.nMagic] = nKeyL;  // on
+	Note[284 + 25 + Control.nMagic] = nKeyAJ; // my
 
-	Note[291 + Control.nMagic] = nKeyAJ; // way~ (21초)
-	Note[301 + Control.nMagic] = nKeyA;
-	Note[303 + Control.nMagic] = nKeyS;
-	Note[305 + Control.nMagic] = nKeySK; // way~ (22초)
-	Note[315 + Control.nMagic] = nKeyS;
-	Note[317 + Control.nMagic] = nKeyD;
-	Note[319 + Control.nMagic] = nKeyDL; // way~ (23초)
+	Note[291 + 25 + Control.nMagic] = nKeyAJ; // way~ (21초)
+	Note[301 + 30 + Control.nMagic] = nKeyA;
+	Note[303 + 30 + Control.nMagic] = nKeyS;
+	Note[305 + 30 + Control.nMagic] = nKeySK; // way~ (22초)
+	Note[315 + 30 + Control.nMagic] = nKeyS;
+	Note[317 + 30 + Control.nMagic] = nKeyD;
+	Note[319 + 30 + Control.nMagic] = nKeyDL; // way~ (23초)
 
-	Note[337 + Control.nMagic] = nKeyK;  // MR 화음 (24초)
-	Note[338 + Control.nMagic] = nKeyJ;
-	Note[339 + Control.nMagic] = nKeyK;
-	Note[340 + Control.nMagic] = nKeyL;
+	Note[337 + 33 + Control.nMagic] = nKeyK;  // MR 화음 (24초)
+	Note[338 + 33 + Control.nMagic] = nKeyJ;
+	Note[339 + 33 + Control.nMagic] = nKeyK;
+	Note[340 + 33 + Control.nMagic] = nKeyL;
 
-	Note[354 + Control.nMagic] = nKeySK; // 넌 (25초)
-	Note[358 + Control.nMagic] = nKeyS;  // 그
-	Note[362 + Control.nMagic] = nKeyS;  // 냥
-	Note[367 + Control.nMagic] = nKeyL;  // 믿
-	Note[371 + Control.nMagic] = nKeyK;  // 으
-	Note[375 + Control.nMagic] = nKeyK;  // 면
-	Note[379 + Control.nMagic] = nKeyAJ; // 돼
+	Note[354 + 33 + Control.nMagic] = nKeySK; // 넌 (25초)
+	Note[359 + 33 + Control.nMagic] = nKeyS;  // 그
+	Note[364 + 33 + Control.nMagic] = nKeyS;  // 냥
+	Note[369 + 33 + Control.nMagic] = nKeyL;  // 믿
+	Note[374 + 33 + Control.nMagic] = nKeyK;  // 으
+	Note[379 + 33 + Control.nMagic] = nKeyK;  // 면
+	Note[384 + 33 + Control.nMagic] = nKeyAJ; // 돼
 
-	Note[400 + Control.nMagic] = nKeyK;  // I'm
-	Note[405 + Control.nMagic] = nKeyL;  // on
-	Note[410 + Control.nMagic] = nKeyAJ; // my
+	Note[400 + 33 + Control.nMagic] = nKeyK;  // I'm
+	Note[405 + 33 + Control.nMagic] = nKeyL;  // on
+	Note[410 + 33 + Control.nMagic] = nKeyAJ; // my
 
-	Note[416 + Control.nMagic] = nKeyAJ; // way~ (29초)
-	Note[428 + Control.nMagic] = nKeyA;
-	Note[430 + Control.nMagic] = nKeyS;
-	Note[432 + Control.nMagic] = nKeySK; // way~ (30초)
-	Note[441 + Control.nMagic] = nKeyS;
-	Note[443 + Control.nMagic] = nKeyD;
-	Note[445 + Control.nMagic] = nKeyDL; // way~ (31초)
+	Note[421 + 33 + Control.nMagic] = nKeyAJ; // way~ (29초)
+	Note[433 + 33 + Control.nMagic] = nKeyA;
+	Note[435 + 33 + Control.nMagic] = nKeyS;
+	Note[437 + 33 + Control.nMagic] = nKeySK; // way~ (30초)
+	Note[449 + 33 + Control.nMagic] = nKeyS;
+	Note[451 + 33 + Control.nMagic] = nKeyD;
+	Note[453 + 33 + Control.nMagic] = nKeyDL; // way~ (31초)
 
-	Note[460 + Control.nMagic] = nKeyK;  // MR 화음 (32초)
-	Note[461 + Control.nMagic] = nKeyL;
-	Note[462 + Control.nMagic] = nKeyK;
-	Note[463 + Control.nMagic] = nKeyJ;
+	Note[467 + 33 + Control.nMagic] = nKeyK;  // MR 화음 (32초)
+	Note[468 + 33 + Control.nMagic] = nKeyL;
+	Note[469 + 33 + Control.nMagic] = nKeyK;
+	Note[470 + 33 + Control.nMagic] = nKeyJ;
 
-	Note[479 + Control.nMagic] = nKeySK; // 보 (33초)
-	Note[483 + Control.nMagic] = nKeyS;  // 이
-	Note[488 + Control.nMagic] = nKeyS;  // 는
-	Note[492 + Control.nMagic] = nKeyDL; // 그
-	Note[496 + Control.nMagic] = nKeyA;  // 대
-	Note[500 + Control.nMagic] = nKeyS;  // 로
-	Note[504 + Control.nMagic] = nKeySK; // 야
+	Note[480 + 40 + Control.nMagic] = nKeySK; // 보 (33초)
+	Note[485 + 40 + Control.nMagic] = nKeyS;  // 이
+	Note[490 + 40 + Control.nMagic] = nKeyS;  // 는
+	Note[495 + 40 + Control.nMagic] = nKeyDL; // 그
+	Note[500 + 40 + Control.nMagic] = nKeyA;  // 대
+	Note[505 + 40 + Control.nMagic] = nKeyS;  // 로
+	Note[510 + 40 + Control.nMagic] = nKeySK; // 야
+	
+	// Part3 : 36초 ~ 52초
+	Note[599 - 40 + Control.nMagic] = nKeyAL; // mr
+	Note[607 - 40 + Control.nMagic] = nKeyAL;
+	Note[615 - 40 + Control.nMagic] = nKeyDJ;
+
+	Note[626 - 40 + Control.nMagic] = nKeyAS; // 너
+	Note[628 - 40 + Control.nMagic] = nKeyKL; // 어
+	Note[630 - 40 + Control.nMagic] = nKeySD; // 느
+	Note[632 - 40 + Control.nMagic] = nKeyJK; // 은
+
+	Note[642 - 40 + Control.nMagic] = nKeySD; // 누
+	Note[644 - 40 + Control.nMagic] = nKeyJK; // 군
+	Note[646 - 40 + Control.nMagic] = nKeyAS; // 가
+	Note[648 - 40 + Control.nMagic] = nKeyKL; // 의
+
+	Note[656 - 40 + Control.nMagic] = nKeyA;  // dreams
+	Note[659 - 40 + Control.nMagic] = nKeyS;
+	Note[662 - 40 + Control.nMagic] = nKeyA;
+
+	Note[665 - 40 + Control.nMagic] = nKeyL; // come true
+	Note[668 - 40 + Control.nMagic] = nKeyK;
+	Note[671 - 40 + Control.nMagic] = nKeyL;
+	Note[674 - 40 + Control.nMagic] = nKeyDJ;
+
+	Note[682 - 40 + Control.nMagic] = nKeyS; // 제일
+	Note[686 - 40 + Control.nMagic] = nKeyD;
+	Note[690 - 40 + Control.nMagic] = nKeyJ;
+	Note[694 - 40 + Control.nMagic] = nKeyD;
+
+	Note[702 - 40 + Control.nMagic] = nKeyK; // 좋은 
+	Note[706 - 40 + Control.nMagic] = nKeyJ;
+	Note[710 - 40 + Control.nMagic] = nKeyD;
+	Note[714 - 40 + Control.nMagic] = nKeyJ;
+
+	Note[728 - 40 + Control.nMagic] = nKeyD; // 어느날의
+	Note[731 - 40 + Control.nMagic] = nKeyJ;
+	Note[734 - 40 + Control.nMagic] = nKeyD;
+	Note[737 - 40 + Control.nMagic] = nKeyJ;
+	Note[740 - 40 + Control.nMagic] = nKeyD;
+	Note[743 - 40 + Control.nMagic] = nKeyJ;
+	Note[748 - 40 + Control.nMagic] = nKeyAL;
+
+	Note[760 - 40 + Control.nMagic] = nKeyA; // 머물고픈
+	Note[763 - 40 + Control.nMagic] = nKeyL;
+	Note[766 - 40 + Control.nMagic] = nKeyS;
+	Note[769 - 40 + Control.nMagic] = nKeyK;
+
+	Note[778 - 40 + Control.nMagic] = nKeyD; // 어딘가의 
+	Note[781 - 40 + Control.nMagic] = nKeyJ;
+	Note[784 - 40 + Control.nMagic] = nKeyA;
+	Note[787 - 40 + Control.nMagic] = nKeyL;
+
+	Note[798 - 40 + Control.nMagic] = nKeyAJ; // 낮
+	Note[806 - 40 + Control.nMagic] = nKeyDL; // 선
+	Note[814 - 40 + Control.nMagic] = nKeySK; // 뷰
+
+	Note[828 - 40 + Control.nMagic] = nKeyAL; // mr
+
+	Note[838 - 40 + Control.nMagic] = nKeyA;  // I'II 
+	Note[841 - 40 + Control.nMagic] = nKeyA;
+	Note[844 - 40 + Control.nMagic] = nKeyA;
+
+	Note[847 - 40 + Control.nMagic] = nKeyL; // be
+	Note[850 - 40 + Control.nMagic] = nKeyL;
+	Note[853 - 40 + Control.nMagic] = nKeyL;
+
+	Note[856 - 40 + Control.nMagic] = nKeyS; // far
+	Note[859 - 40 + Control.nMagic] = nKeyD;
+	Note[861 - 40 + Control.nMagic] = nKeyS;
+
+	Note[864 - 40 + Control.nMagic] = nKeyK; // a~~(어~~)
+	Note[867 - 40 + Control.nMagic] = nKeyJ;
+	Note[870 - 40 + Control.nMagic] = nKeyK;
+
+	Note[873 - 40 + Control.nMagic] = nKeyA; // wa
+	Note[876 - 40 + Control.nMagic] = nKeyS;
+	Note[879 - 40 + Control.nMagic] = nKeyD;
+
+	Note[881 - 40 + Control.nMagic] = nKeyL; // y~~~~
+	Note[884 - 40 + Control.nMagic] = nKeyK;
+	Note[887 - 40 + Control.nMagic] = nKeyJ;
+
+	Note[891 - 40 + Control.nMagic] = nKeyAL; // that
+	Note[898 - 40 + Control.nMagic] = nKeyDK; // 's
+	Note[902 - 40 + Control.nMagic] = nKeySJ; // my~
 
 }
 // 기본 기능 함수
