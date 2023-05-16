@@ -53,7 +53,7 @@ int main(void) {
 
 	while (Stage != END) {
 	
-		Play(0); // pSound[0] (=Main_BGM.wav)를 실행
+		Play(0); // pSound[0] (=Main_BGM.mp3)를 실행
 		
 		ScreenInit(); 
 		KeyIndexInit();
@@ -67,7 +67,7 @@ int main(void) {
 				if (inputKey == ENTER) { // 엔터 키를 입력하는 경우
 					if (Stage == READY) {
 						pChannel[0]->stop();
-						Play(1); // pSound[0] (=Game_BGM.wav)를 실행
+						Play(1); // pSound[0] (=Game_BGM.mp3)를 실행
 					}
 					else if (Stage == PAUSE) { // 스테이지 Pause 상태일 때 엔터를 누를 경우
 						PauseEnd = clock();

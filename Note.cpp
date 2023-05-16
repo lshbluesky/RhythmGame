@@ -41,7 +41,7 @@ using namespace FMOD;
 void SoundSystem() {
 	System_Create(&pSystem);
 	pSystem->init(4, FMOD_INIT_NORMAL, NULL);
-	pSystem->createSound("Main_BGM.wav", FMOD_LOOP_NORMAL | FMOD_HARDWARE, NULL, &pSound[0]); // 오프닝음악
+	pSystem->createSound("Main_BGM.mp3", FMOD_LOOP_NORMAL | FMOD_HARDWARE, NULL, &pSound[0]); // 오프닝음악
 	pSystem->createSound("Game_BGM.mp3", FMOD_DEFAULT, NULL, &pSound[1]); // 게임음악
 }
 void Play(int Sound_num) {
