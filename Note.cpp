@@ -290,8 +290,8 @@ void NoteInit(void) {
 	Note[433 + 33 + Control.nMagic] = nKeyA;
 	Note[435 + 33 + Control.nMagic] = nKeyS;
 	Note[437 + 33 + Control.nMagic] = nKeySK; // way~ (30초)
-	Note[446 + 33 + Control.nMagic] = nKeyS;
-	Note[448 + 33 + Control.nMagic] = nKeyD;
+	Note[449 + 33 + Control.nMagic] = nKeyS;
+	Note[451 + 33 + Control.nMagic] = nKeyD;
 	Note[453 + 33 + Control.nMagic] = nKeyDL; // way~ (31초)
 
 	Note[467 + 33 + Control.nMagic] = nKeyK;  // MR 화음 (32초)
