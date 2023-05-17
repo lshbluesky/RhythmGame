@@ -393,6 +393,55 @@ void NoteInit(void) {
 	Note[898 - 40 + Control.nMagic] = nKeyDK; // 's
 	Note[902 - 40 + Control.nMagic] = nKeySJ; // my~
 
+	// Part 4 : 52초 ~ 68초
+	Note[904 - 40 + Control.nMagic] = nKeySK;  // life
+	Note[909 - 40 + Control.nMagic] = nKeySK;  // is
+
+	Note[920 - 40 + Control.nMagic] = nKeyAL;  // 아 
+	Note[922 - 40 + Control.nMagic] = nKeySK;  // 름    
+	Note[924 - 40 + Control.nMagic] = nKeyDJ;  // 다
+	Note[926 - 40 + Control.nMagic] = nKeySK;  // 운
+
+	Note[934 - 38 + Control.nMagic] = nKeyDJ;  // 갤
+	Note[940 - 38 + Control.nMagic] = nKeyDJ;  // 럭
+	Note[946 - 38 + Control.nMagic] = nKeyDJ;  // 시
+
+	Note[961 - 40 + Control.nMagic] = nKeyKL;  // be
+	Note[963 - 40 + Control.nMagic] = nKeyAS;  // A
+	Note[973 - 40 + Control.nMagic] = nKeyJ;   // writer
+	Note[975 - 40 + Control.nMagic] = nKeyD;
+
+	Note[990 - 40 + Control.nMagic] = nKeyDJ;  // 장
+	Note[992 - 40 + Control.nMagic] = nKeySK;  // 르
+	Note[994 - 40 + Control.nMagic] = nKeyAL;  // 로
+	Note[996 - 40 + Control.nMagic] = nKeySK;  // 는
+
+	Note[1008 - 40 + Control.nMagic] = nKeyDJ; // 판
+	Note[1014 - 40 + Control.nMagic] = nKeySK; // 타
+	Note[1020 - 40 + Control.nMagic] = nKeyAL; // 지
+
+	Note[1029 - 40 + Control.nMagic] = nKeySD; // 내
+	Note[1031 - 40 + Control.nMagic] = nKeyJK; // 일
+
+	Note[1045 - 40 + Control.nMagic] = nKeyA;  // 내
+	Note[1047 - 40 + Control.nMagic] = nKeyK;  // 게
+
+	Note[1062 - 45 + Control.nMagic] = nKeySK; // 열
+	Note[1064 - 45 + Control.nMagic] = nKeyDJ; // 리
+	Note[1066 - 45 + Control.nMagic] = nKeyAL; // 는
+	Note[1068 - 45 + Control.nMagic] = nKeySK; // 건
+
+	Note[1078 - 43 + Control.nMagic] = nKeyD;  // big
+	Note[1079 - 43 + Control.nMagic] = nKeyS;
+	Note[1084 - 43 + Control.nMagic] = nKeyJ;  // big
+	Note[1085 - 43 + Control.nMagic] = nKeyK;
+	Note[1090 - 43 + Control.nMagic] = nKeyAL; // 스테이지
+
+	Note[1116 - 45 + Control.nMagic] = nKeySJ; // so that
+	Note[1122 - 45 + Control.nMagic] = nKeyK;  // is
+	Note[1128 - 45 + Control.nMagic] = nKeyDK; // who
+	Note[1136 - 45 + Control.nMagic] = nKeyDL; // I
+	Note[1144 - 45 + Control.nMagic] = nKeyDJ; // am
 }
 // 기본 기능 함수
 void Update() {
