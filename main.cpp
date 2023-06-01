@@ -24,17 +24,19 @@ class MainMenu {
 public:
 	void DrawMainMenu() {
 		cout << "\n\n\n\n";
-		cout << "\t\t"; cout << "      rrrrrrrrrrr      dddddddddddd\n";
-		cout << "\t\t"; cout << "      rr        rr     dd          dd\n";
-		cout << "\t\t"; cout << "      rr         rr    dd            dd\n";
-		cout << "\t\t"; cout << "      rr         rr    dd             dd\n";
-		cout << "\t\t"; cout << "      rr         rr    dd             dd\n";
-		cout << "\t\t"; cout << "      rr        rr     dd             dd\n";
-		cout << "\t\t"; cout << "      rrrrrrrrrr       dd             dd\n";
-		cout << "\t\t"; cout << "      rr       rr      dd            dd\n";
-		cout << "\t\t"; cout << "      rr         rr    dd          dd\n";
-		cout << "\t\t"; cout << "      rr           rr  ddccccccccdd\n\n";
-		cout << "\t\t"; cout << "둠칫~둠칫 ENTER키를 누르고 너의 리듬을 보여줘!\n\n";
+		cout << "\t\t"; cout << "★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆\n\n";
+		cout << "\t\t"; cout << "       rrrrrrrrrrr      dddddddddddd\n";
+		cout << "\t\t"; cout << "       rr        rr     dd          dd\n";
+		cout << "\t\t"; cout << "       rr         rr    dd            dd\n";
+		cout << "\t\t"; cout << "       rr         rr    dd             dd\n";
+		cout << "\t\t"; cout << "       rr         rr    dd             dd\n";
+		cout << "\t\t"; cout << "       rr        rr     dd             dd\n";
+		cout << "\t\t"; cout << "       rrrrrrrrrr       dd             dd\n";
+		cout << "\t\t"; cout << "       rr       rr      dd            dd\n";
+		cout << "\t\t"; cout << "       rr         rr    dd          dd\n";
+		cout << "\t\t"; cout << "       rr           rr  ddccccccccdd\n\n";
+		cout << "\t\t"; cout << " 둠칫~둠칫 ENTER키를 누르고 너의 리듬을 보여줘!\n\n";
+		cout << "\t\t"; cout << "☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★\n";
 		getchar();
 	}
 
