@@ -21,7 +21,7 @@ using namespace FMOD;
 
 // 첫 메인 화면을 그리기 위한 클래스 생성
 class MainMenu {
-public:
+private:
 	void DrawMainMenu() {
 		cout << "\n\n\n\n";
 		cout << "\t\t"; cout << "★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆\n\n";
@@ -39,7 +39,7 @@ public:
 		cout << "\t\t"; cout << "☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★\n";
 		getchar();
 	}
-
+public:
 	void InitMainMenu() {
 		MainMenu::DrawMainMenu();
 	}
